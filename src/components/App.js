@@ -14,7 +14,7 @@ class App extends React.Component {
         return (
             <div className='wrrs-wrapper'>
                 <img src={require('./../img/logo.svg')} className='wrrs-wrapper__logo' alt='logo' />
-                <div className='wrrs-wrapper__heading'>Tall InfoSystems</div>
+                <div className='wrrs-wrapper__heading'>Tom Allain</div>
 
                 <Route exact path='/' component={Home} />
                 <Route path='/one' component={One} />
