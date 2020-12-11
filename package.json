@@ -1,7 +1,7 @@
 {
 	"name": "portfolio",
 	"version": "1.0.0",
-	"description": "Tall InfoSystems portfolio",
+	"description": "portfolio",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/allaintkj/portfolio.git"

@@ -1,0 +1,56 @@
+// variables and mixins
+$black: #000000;
+$gray: #999999;
+$graydark: #333333;
+$orange: #ff8a16;
+$white: #ffffff;
+
+$phone: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$wide: 1200px;
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('fonts/OpenSans-Regular.ttf');
+}
+
+// global styles
+* {
+    font-family: 'OpenSans-Regular';
+    margin: 0;
+}
+
+body {
+    background-color: $gray;
+    color: $graydark;
+    font-size: 1.4rem;
+}
+
+h1, h2 {
+    font-family: 'OpenSans-Light';
+    font-weight: 100;
+}
+
+.txt-dark {
+    color: $graydark;
+}
+
+.txt-orange {
+    color: $orange;
+}
+
+.txt-white {
+    color: $white;
+}
+
+// import partials
+@import './scss/App';
+@import './scss/Header';
+@import './scss/Mobile';
+@import './scss/Body';
