@@ -1,0 +1,14 @@
+.portfolio__menu-button {
+    background-color: $graydark;
+    color: $orange;
+    cursor: pointer;
+    display: block;
+    padding: 5px 0;
+    text-align: center;
+    transition: all 0.25s ease;
+
+    &:hover {
+        color: $white;
+        opacity: 0.8;
+    }
+}

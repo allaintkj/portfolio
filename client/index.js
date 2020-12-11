@@ -6,4 +6,4 @@ import App from './components/App';
 
 import './style.scss';
 
-ReactDOM.render(<Router><App /></Router>, document.getElementById('react-container'));
+ReactDOM.render(<Router><App /></Router>, document.getElementById('portfolio-container'));
