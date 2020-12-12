@@ -1,14 +1,78 @@
-.portfolio__menu-button {
-    background-color: $graydark;
-    color: $orange;
-    cursor: pointer;
-    display: block;
-    padding: 5px 0;
-    text-align: center;
-    transition: all 0.25s ease;
+.portfolio__menu {
+    &-button {
+        border-bottom: 1px solid transparent;
+        background-color: $black;
+        color: $gray;
+        cursor: pointer;
+        display: block;
+        padding: 5px 0;
+        text-align: center;
+        transition: all 0.25s ease;
 
-    &:hover {
-        color: $white;
-        opacity: 0.8;
+        &:hover {
+            background-color: transparent;
+            border-color: $orange;
+            color: $white;
+        }
+    }
+
+    &-close {
+        border: 1px solid transparent;
+        background-color: $black;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 2rem;
+        float: right;
+        margin: 1rem 1rem;
+        padding: 0 1rem;
+        position: relative;
+        transition: all 0.25s ease;
+
+        &:hover {
+            background-color: transparent;
+            border-color: $orange;
+            color: $white;
+        }
+    }
+
+    &__nav {
+        position: relative;
+
+        &-link {
+            border: 1px solid transparent;
+            background-color: $black;
+            color: $gray;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            position: relative;
+            text-align: center;
+            transition: all 0.25s ease;
+            width: 25%;
+
+            &:hover {
+                background-color: transparent;
+                border-color: $orange;
+                color: $white;
+            }
+        }
+
+        &-wrapper {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 80px;
+        }
+    }
+
+    &-overlay {
+        background-color: $graydark;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
     }
 }

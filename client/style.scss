@@ -22,14 +22,26 @@ $wide: 1200px;
 
 // global styles
 * {
+    box-sizing: border-box;
     font-family: 'OpenSans-Regular';
     margin: 0;
 }
 
+a {
+    color: $orange;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+
+    &:hover {
+        color: $white;
+    }
+}
+
 body {
-    background-color: $gray;
-    color: $graydark;
-    font-size: 1.4rem;
+    background-color: $graydark;
+    color: $gray;
+    font-size: 1.2rem;
 }
 
 h1, h2 {
