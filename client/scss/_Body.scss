@@ -1,8 +1,18 @@
 .portfolio__body {
-    padding: 2rem 1rem;
-    text-align: center;
+    &--inner {
+        background-color: $gray;
+        color: $graydark;
+        margin-bottom: 1rem;
+        padding: 2rem 1rem;
+        width: 100%;
+    }
 
-    &--title {
+    &--outer {
+        background-color: $graydark;
+        text-align: center;
+    }
+
+    &__title {
         margin-bottom: 1rem;
     }
 }
