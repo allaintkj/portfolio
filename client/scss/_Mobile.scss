@@ -42,14 +42,13 @@
             border: 1px solid transparent;
             background-color: $black;
             color: $gray;
-            display: block;
+            display: inline-block;
             margin: 0 auto;
             margin-bottom: 1rem;
             padding: 0.5rem 1rem;
             position: relative;
             text-align: center;
             transition: all 0.25s ease;
-            width: 25%;
 
             &:hover {
                 background-color: transparent;
@@ -60,6 +59,8 @@
 
         &-wrapper {
             bottom: 0;
+            display: flex;
+            flex-direction: column;
             left: 0;
             position: absolute;
             right: 0;
