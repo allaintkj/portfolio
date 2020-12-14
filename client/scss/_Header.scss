@@ -3,12 +3,34 @@
     border-bottom: 1px solid $orange;
     display: block;
     font-size: 1.5rem;
-    padding: 2rem 0;
+    padding: 1rem 0;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
 
-    h1 {
-        display: inline-block;
+    &__nav {
+        display: none;
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__header {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        &__nav {
+            display: block;
+        }
+    }
+}
+
+@media (min-width: $wide) {
+    .portfolio__header {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }

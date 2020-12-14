@@ -20,8 +20,8 @@ class App extends React.Component {
                 </div>
 
                 <div className='portfolio__menu__nav-wrapper'>
-                    <a className='portfolio__menu__nav-link' href='/'>Showcase</a>
-                    <a className='portfolio__menu__nav-link' href='/'>Contact</a>
+                    <a className='nav-link' href='/'>Showcase</a>
+                    <a className='nav-link' href='/'>Contact</a>
                 </div>
             </div>
         );
@@ -31,8 +31,14 @@ class App extends React.Component {
         return (
             <div className='portfolio'>
                 <div className='portfolio__header'>
-                    <h1 className='txt-white'>Tom&nbsp;</h1>
-                    <h1 className='txt-white'>Allain</h1>
+                    <div className='portfolio__header__title'>
+                        <h1 className='txt-white'>Tom Allain</h1>
+                    </div>
+
+                    <div className='portfolio__header__nav'>
+                        <a className='nav-link' href='/'>Showcase</a>
+                        <a className='nav-link' href='/'>Contact</a>
+                    </div>
                 </div>
 
                 <div className='portfolio__menu-button'
