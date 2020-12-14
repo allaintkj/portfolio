@@ -35,35 +35,19 @@
         }
     }
 
-    &__nav {
-        position: relative;
+    &__nav-wrapper {
+        align-items: center;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 80px;
 
-        &-link {
-            border: 1px solid transparent;
-            background-color: $black;
-            color: $gray;
-            display: block;
-            margin: 0 auto;
+        .nav-link {
             margin-bottom: 1rem;
-            padding: 0.5rem 1rem;
-            position: relative;
-            text-align: center;
-            transition: all 0.25s ease;
-            width: 25%;
-
-            &:hover {
-                background-color: transparent;
-                border-color: $orange;
-                color: $white;
-            }
-        }
-
-        &-wrapper {
-            bottom: 0;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 80px;
         }
     }
 
@@ -74,5 +58,11 @@
         position: absolute;
         right: 0;
         top: 0;
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__menu-button {
+        display: none;
     }
 }

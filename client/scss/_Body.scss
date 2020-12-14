@@ -16,3 +16,19 @@
         margin-bottom: 1rem;
     }
 }
+
+@media (min-width: $desktop) {
+    .portfolio__body {
+        &--outer {
+            margin: 0 2rem;
+        }
+    }
+}
+
+@media (min-width: $wide) {
+    .portfolio__body {
+        &--outer {
+            margin: 0 4rem;
+        }
+    }
+}
