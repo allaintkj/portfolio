@@ -28,12 +28,14 @@ $wide: 1200px;
 }
 
 a {
+    background-color: $graydark;
     color: $orange;
+    padding: 0 0.25rem;
     text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.25s ease;
+    transition: all 0.25s ease;
 
     &:hover {
+        background-color: transparent;
         color: $white;
     }
 }
@@ -45,12 +47,17 @@ a.nav-link {
     display: inline-block;
     padding: 0.5rem 1rem;
     position: relative;
+    text-transform: uppercase;
     transition: all 0.25s ease;
 
-    &:hover {
+    &--active {
         background-color: transparent;
         border-color: $orange;
         color: $white;
+    }
+
+    &:hover {
+        @extend .nav-link--active;
     }
 }
 
@@ -63,18 +70,6 @@ body {
 h1, h2 {
     font-family: 'OpenSans-Light';
     font-weight: 100;
-}
-
-.txt-dark {
-    color: $graydark;
-}
-
-.txt-orange {
-    color: $orange;
-}
-
-.txt-white {
-    color: $white;
 }
 
 // import partials

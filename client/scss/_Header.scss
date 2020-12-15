@@ -11,6 +11,19 @@
     &__nav {
         display: none;
     }
+
+    &__title {
+        color: $white;
+
+        a {
+            color: $white;
+            padding: 0;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
 }
 
 @media (min-width: $desktop) {

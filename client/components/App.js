@@ -1,4 +1,15 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+// components
+import Header from './Header';
+import Nav from './Nav';
+
+// pages
+import Landing from '../pages/Landing';
+import Showcase from '../pages/Showcase';
+import Contact from '../pages/Contact';
+import ErrorPage from '../pages/ErrorPage';
 
 class App extends React.Component {
     constructor() {
@@ -20,8 +31,7 @@ class App extends React.Component {
                 </div>
 
                 <div className='portfolio__menu__nav-wrapper'>
-                    <a className='nav-link' href='/'>Showcase</a>
-                    <a className='nav-link' href='/'>Contact</a>
+                    <Nav toggleMenu={() => this.setState({displayMenu: 0})} />
                 </div>
             </div>
         );
@@ -30,16 +40,7 @@ class App extends React.Component {
     render() {
         return (
             <div className='portfolio'>
-                <div className='portfolio__header'>
-                    <div className='portfolio__header__title'>
-                        <h1 className='txt-white'>Tom Allain</h1>
-                    </div>
-
-                    <div className='portfolio__header__nav'>
-                        <a className='nav-link' href='/'>Showcase</a>
-                        <a className='nav-link' href='/'>Contact</a>
-                    </div>
-                </div>
+                <Header />
 
                 <div className='portfolio__menu-button'
                     onClick={() => this.setState({displayMenu: 1})}>
@@ -49,15 +50,12 @@ class App extends React.Component {
                 {this.state.displayMenu ? this.displayMenu() : null}
 
                 <div className='portfolio__body--outer'>
-                    <div className='portfolio__body--inner'>
-                        <div className='portfolio__body__title'>
-                            <h2>Under Construction</h2>
-                        </div>
-
-                        <div className='portfolio__body__text'>
-                            <p>Check back soon!</p>
-                        </div>
-                    </div>
+                    <Switch>
+                        <Route component={Landing} exact path='/' />
+                        <Route component={Showcase} path='/showcase' />
+                        <Route component={Contact} path='/contact' />
+                        <Route component={ErrorPage} />
+                    </Switch>
                 </div>
             </div>
         );
