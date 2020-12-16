@@ -10,12 +10,13 @@ class Showcase extends React.Component {
         this.buildProjectList = this.buildProjectList.bind(this);
 
         this.state = {
-            projects: false
+            loading: true,
+            projects: 0
         };
     }
 
     buildProjectList() {
-        if (!this.state.projects) { return (<p>Currently no projects to show.</p>); }
+        if (this.state.projects == 0) { return <p>No projects to display.</p>; }
 
         return this.state.projects.map((project, index) => {
             return (
@@ -52,7 +53,13 @@ class Showcase extends React.Component {
             techs
         }`).then(projects => {
             this.setState({
+                loading: false,
                 projects: projects
+            });
+        }).catch(() => {
+            this.setState({
+                loading: false,
+                projects: 0
             });
         });
     }
@@ -69,7 +76,8 @@ class Showcase extends React.Component {
                 </div>
 
                 <div className='portfolio__project-wrapper'>
-                    {this.buildProjectList()}
+                    {this.state.loading ? <p>Fetching...</p> : null}
+                    {this.state.loading ? null : this.buildProjectList()}
                 </div>
             </div>
         );
