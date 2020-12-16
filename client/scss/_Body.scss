@@ -25,6 +25,10 @@
 
 @media (min-width: $desktop) {
     .portfolio__body {
+        &--inner {
+            padding: 4rem 2rem;
+        }
+
         &--outer {
             margin: 0 2rem;
         }
@@ -33,6 +37,10 @@
 
 @media (min-width: $wide) {
     .portfolio__body {
+        &--inner {
+            padding: 8rem 4rem;
+        }
+
         &--outer {
             margin: 0 4rem;
         }
