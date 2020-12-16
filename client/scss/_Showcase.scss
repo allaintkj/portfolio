@@ -1,0 +1,45 @@
+.portfolio__project {
+    background-color: $graydark;
+    color: $gray;
+    display: inline-block;
+    margin: 1px;
+    max-width: 250px;
+    padding: 1rem;
+
+    &__desc {
+        margin: 2rem 0;
+    }
+
+    &__tech {
+        border: 1px solid $orange;
+        display: inline-block;
+        font-size: 0.9rem;
+        margin: 0 5px;
+        padding: 0 5px;
+        padding-bottom: 2px;
+    }
+
+    &__techs {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__project {
+        &-wrapper {
+            align-items: stretch;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+}
