@@ -36,7 +36,7 @@ module.exports = (env, argv) => {
             stats: 'minimal'
         },
         devtool: devMode ? 'source-map' : '',
-        entry: './client/index.js',
+        entry: ['@babel/polyfill', './client/index.js'],
         optimization: {
             minimizer: [
                 new TerserPlugin(),
