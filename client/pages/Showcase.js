@@ -19,14 +19,26 @@ class Showcase extends React.Component {
         if (this.state.projects == 0) { return <p>No projects to display.</p>; }
 
         return this.state.projects.map((project, index) => {
+            let displayLink = (linkUrl, linkLabel) => {
+                return (
+                    <a className='portfolio__project__link'
+                        href={linkUrl}
+                        rel='noopener noreferrer'
+                        target='_blank'>
+                        View the {linkLabel}
+                    </a>
+                );
+            };
+
             return (
-                <a className='portfolio__project'
-                    href={project.link}
-                    key={`project-list-${index}-${project.title}`}
-                    rel='noopener noreferrer'
-                    target='_blank'>
+                <div className='portfolio__project'
+                    key={`project-list-${index}-${project.title}`}>
                     <h2 className='portfolio__project__title'>{project.title}</h2>
-                    <p className='portfolio__project__desc'>{project.description}</p>
+                    <p className='portfolio__project__excerpt'>{project.excerpt}</p>
+
+                    {project.demo ? displayLink(project.demo, 'demo') : null}
+                    {project.repository ? displayLink(project.repository, 'repository') : null}
+
                     <ul className='portfolio__project__techs'>
                         {project.techs.map((tech, index) => {
                             return (
@@ -37,7 +49,7 @@ class Showcase extends React.Component {
                             );
                         })}
                     </ul>
-                </a>
+                </div>
             );
         });
     }
@@ -47,9 +59,11 @@ class Showcase extends React.Component {
             title,
             slug,
             mainImage,
+            excerpt,
             description,
             projectType,
-            link,
+            repository,
+            demo,
             techs
         }`).then(projects => {
             this.setState({
