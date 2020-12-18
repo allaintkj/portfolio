@@ -26,6 +26,11 @@ export default {
       },
     },
     {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'string',
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'string',
@@ -42,7 +47,11 @@ export default {
       }
     },
     {
-      name: 'link',
+      name: 'repository',
+      type: 'url',
+    },
+    {
+      name: 'demo',
       type: 'url',
     },
     {

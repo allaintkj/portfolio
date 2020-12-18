@@ -5,9 +5,22 @@
     margin: 1px;
     max-width: 250px;
     padding: 1rem;
+    transition: all 0.25s ease;
 
-    &__desc {
-        margin: 2rem 0;
+    &:hover {
+        background-color: transparent;
+        color: $graydark;
+    }
+
+    &__excerpt {
+        margin-bottom: 1rem;
+    }
+
+    &__link {
+        font-size: .9rem;
+        display: block;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
     }
 
     &__tech {
@@ -21,8 +34,12 @@
 
     &__techs {
         list-style-type: none;
-        margin: 0;
+        margin: 2rem 0 0;
         padding: 0;
+    }
+
+    &__title {
+        margin-bottom: 2rem;
     }
 
     &-wrapper {
