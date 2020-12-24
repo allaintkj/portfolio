@@ -17,11 +17,23 @@
 
         a {
             color: $white;
+            display: block;
             padding: 0;
 
             &:hover {
                 opacity: 0.5;
             }
+        }
+
+        img {
+            display: block;
+            height: 80px;
+            margin:auto;
+            width: 300px;
+        }
+
+        svg {
+            display: block;
         }
     }
 }

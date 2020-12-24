@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 // components
 import Header from './Header';
 import Nav from './Nav';
+import Footer from './Footer';
 
 // pages
 import Landing from '../pages/Landing';
@@ -57,6 +58,8 @@ class App extends React.Component {
                         <Route component={ErrorPage} />
                     </Switch>
                 </div>
+
+                <Footer />
             </div>
         );
     }

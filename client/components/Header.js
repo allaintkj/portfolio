@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom';
 // components
 import Nav from './Nav';
 
+// logo
+import Logo from '../img/logo.svg';
+
 class Header extends React.Component {
     constructor() {
         super();
@@ -13,7 +16,9 @@ class Header extends React.Component {
         return (
             <div className='portfolio__header'>
                 <div className='portfolio__header__title'>
-                    <NavLink to='/'><h1>Tom Allain</h1></NavLink>
+                    <NavLink to='/'>
+                        <img src={Logo} />
+                    </NavLink>
                 </div>
 
                 <div className='portfolio__header__nav'>
