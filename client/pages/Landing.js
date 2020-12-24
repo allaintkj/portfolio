@@ -13,8 +13,10 @@ class Landing extends React.Component {
                 </div>
 
                 <div className='portfolio__body__text'>
-                    <p>Under construction.</p>
-                    <p>Feel free to check out the <a href='/showcase'>showcase.</a></p>
+                    <p>Tom Allain</p>
+                    <p>Halifax, Nova Scotia</p>
+                    <p>Web Developer and Electrician</p>
+                    <p>Feel free to check out the <a href='/showcase'>showcase</a> and have a look at some of my work, or see how you can <a href='/contact'>contact</a> me.</p>
                 </div>
             </div>
         );
