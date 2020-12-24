@@ -72,6 +72,12 @@ h1, h2 {
     font-weight: 100;
 }
 
+p {
+    &:not(:first-child) {
+        margin-top: 1rem;
+    }
+}
+
 // import partials
 @import './scss/App';
 @import './scss/Header';
