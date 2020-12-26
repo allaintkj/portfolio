@@ -45,6 +45,7 @@ a.nav-link {
     background-color: $black;
     color: $gray;
     display: inline-block;
+    font-size: 1.2rem;
     padding: 0.5rem 1rem;
     position: relative;
     text-transform: uppercase;
@@ -64,6 +65,10 @@ a.nav-link {
 body {
     background-color: $graydark;
     color: $gray;
+    font-size: 1.2rem;
+}
+
+button {
     font-size: 1.2rem;
 }
 
