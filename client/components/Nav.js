@@ -15,7 +15,7 @@ class Nav extends React.Component {
                         onClick={() => {
                             if (this.props.toggleMenu) { this.props.toggleMenu(); }
                         }}
-                        to='home'>
+                        to='/home'>
                         Home
                     </NavLink>
                 </li>
@@ -26,7 +26,7 @@ class Nav extends React.Component {
                         onClick={() => {
                             if (this.props.toggleMenu) { this.props.toggleMenu(); }
                         }}
-                        to='showcase'>
+                        to='/showcase'>
                         Showcase
                     </NavLink>
                 </li>
@@ -37,7 +37,7 @@ class Nav extends React.Component {
                         onClick={() => {
                             if (this.props.toggleMenu) { this.props.toggleMenu(); }
                         }}
-                        to='contact'>
+                        to='/contact'>
                         Contact
                     </NavLink>
                 </li>

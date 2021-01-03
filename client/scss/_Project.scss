@@ -1,0 +1,35 @@
+.portfolio__project {
+    &__body-wrapper {
+        height: 200px;
+        position: relative;
+    }
+
+    &-hero {
+        left: -1.5em;
+        height: 200px;
+        overflow: hidden;
+        position: absolute;
+        right: -1.5em;
+
+        img {
+            left: 50%;
+            max-width: 110%;
+            min-width: 100%;
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    .portfolio__project {
+        &__body-wrapper {
+            height: 400px;
+        }
+
+        &-hero {
+            height:400px;
+        }
+    }
+}
