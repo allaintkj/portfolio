@@ -8,27 +8,44 @@ class Nav extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                <NavLink activeClassName='nav-link--active'
-                    className='nav-link'
-                    onClick={() => {
-                        if (this.props.toggleMenu) { this.props.toggleMenu(); }
-                    }}
-                    to='/showcase'>
-                    Showcase
-                </NavLink>
+            <ul className='portfolio__nav-links'>
+                <li>
+                    <NavLink activeClassName='link--active'
+                        className='link'
+                        onClick={() => {
+                            if (this.props.toggleMenu) { this.props.toggleMenu(); }
+                        }}
+                        to='home'>
+                        Home
+                    </NavLink>
+                </li>
 
-                <NavLink activeClassName='nav-link--active'
-                    className='nav-link'
-                    onClick={() => {
-                        if (this.props.toggleMenu) { this.props.toggleMenu(); }
-                    }}
-                    to='/contact'>
-                    Contact
-                </NavLink>
-            </React.Fragment>
+                <li>
+                    <NavLink activeClassName='link--active'
+                        className='link'
+                        onClick={() => {
+                            if (this.props.toggleMenu) { this.props.toggleMenu(); }
+                        }}
+                        to='showcase'>
+                        Showcase
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink activeClassName='link--active'
+                        className='link'
+                        onClick={() => {
+                            if (this.props.toggleMenu) { this.props.toggleMenu(); }
+                        }}
+                        to='contact'>
+                        Contact
+                    </NavLink>
+                </li>
+            </ul>
         );
     }
 }
 
 export default Nav;
+
+

@@ -7,16 +7,31 @@ class Contact extends React.Component {
 
     render() {
         return (
-            <div className='portfolio__body--inner'>
-                <div className='portfolio__body__title'>
-                    <h2 className='portfolio__body__title-text'>Contact</h2>
-                </div>
+            <div className='portfolio__contact'>
+                <h1>Get in Touch</h1>
+                <p>I am always looking for my next opportunity.</p>
+                <p>Questions? Want to hire me? Get in touch.</p>
 
-                <div className='portfolio__body__text'>
-                    <p>You can find methods of contacting me on my <a href='https://github.com/allaintkj' rel='noopener noreferrer' target='_blank'>GitHub</a> page or on <a href='https://www.linkedin.com/in/allaintkj' rel='noopener noreferrer' target='_blank'>LinkedIn.</a></p>
+                <div className='portfolio__contact-links'>
+                    <a className='portfolio__button'
+                        href='https://github.com/allaintkj'
+                        rel='noopener noreferrer'
+                        target='_blank'>
+                        GitHub
+                    </a>
+                    <a className='portfolio__button'
+                        href='https://www.linkedin.com/in/allaintkj'
+                        rel='noopener noreferrer'
+                        target='_blank'>
+                        LinkedIn
+                    </a>
+                    <a className='portfolio__button'
+                        href='mailto:tom.allain@protonmail.com'
+                        rel='noopener noreferrer'
+                        target='_blank'>
+                        Email Me
+                    </a>
                 </div>
-
-                <div className='portfolio__contact-wrapper' />
             </div>
         );
     }
