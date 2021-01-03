@@ -10,6 +10,8 @@ $tablet: 768px;
 $desktop: 992px;
 $wide: 1200px;
 
+$gutter-width: 1.5em;
+
 @font-face {
     font-family: 'OpenSans-Bold';
     src: url('fonts/OpenSans-Bold.ttf');
@@ -45,7 +47,7 @@ img {
 }
 
 p {
-    margin: 0.5em;
+    margin: 1em;
 }
 
 ul {
@@ -83,10 +85,10 @@ ul {
 }
 
 .portfolio {
-    padding: 0 1.5em;
+    padding: 0 $gutter-width;
 
     &__body-text {
-        padding: 3em 0;
+        padding: 2em 0;
     }
 
     &__button {
@@ -132,8 +134,22 @@ ul {
     }
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $desktop) {
     body {
         font-size: 20px;
+    }
+
+    .portfolio {
+        padding: 0 ($gutter-width * 2);
+    }
+}
+
+@media (min-width: $wide) {
+    body {
+        font-size: 22px;
+    }
+
+    .portfolio {
+        padding: 0 ($gutter-width * 4);
     }
 }

@@ -2,8 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
 
-import projects from '../projects.json';
-
 // sanity helper
 import sanityClient from '../../sanityClient';
 
@@ -14,15 +12,15 @@ class Showcase extends React.Component {
         this.buildProjectList = this.buildProjectList.bind(this);
 
         this.state = {
-            loading: false,
-            projects: projects
+            loading: true,
+            projects: 0
         };
     }
 
     buildProjectList() {
         if (this.state.projects == 0) {
             return (
-                <li className='portfolio__showcase-item'>
+                <li>
                     No projects to display.
                 </li>
             );
@@ -48,30 +46,28 @@ class Showcase extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
 
-        // sanityClient.fetch(`*[_type == 'project']{
-        //     _id,
-        //     title,
-        //     slug,
-        //     mainImage,
-        //     excerpt,
-        //     description,
-        //     projectType,
-        //     repository,
-        //     demo,
-        //     techs
-        // }`).then(projects => {
-        //     console.log(projects);
-
-        //     this.setState({
-        //         loading: false,
-        //         projects: projects
-        //     });
-        // }).catch(() => {
-        //     this.setState({
-        //         loading: false,
-        //         projects: 0
-        //     });
-        // });
+        sanityClient.fetch(`*[_type == 'project']{
+            _id,
+            title,
+            slug,
+            mainImage,
+            excerpt,
+            description,
+            projectType,
+            repository,
+            demo,
+            techs
+        }`).then(projects => {
+            this.setState({
+                loading: false,
+                projects: projects
+            });
+        }).catch(() => {
+            this.setState({
+                loading: false,
+                projects: 0
+            });
+        });
     }
 
     render() {
@@ -84,7 +80,7 @@ class Showcase extends React.Component {
                 </div>
 
                 <ul className='portfolio__showcase-wrapper'>
-                    {this.state.loading ? <li className='portfolio__showcase-item'>Fetching...</li> : null}
+                    {this.state.loading ? <li>Fetching...</li> : null}
                     {this.state.loading ? null : this.buildProjectList()}
                 </ul>
             </div>

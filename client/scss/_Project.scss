@@ -5,11 +5,12 @@
     }
 
     &-hero {
-        left: -1.5em;
+        box-shadow: 0 0px 5px 0 #000000;
+        left: (0 - $gutter-width);
         height: 200px;
         overflow: hidden;
         position: absolute;
-        right: -1.5em;
+        right: (0 - $gutter-width);
 
         img {
             left: 50%;
@@ -30,6 +31,34 @@
 
         &-hero {
             height:400px;
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__project {
+        &__body-wrapper {
+            height: 400px;
+        }
+
+        &-hero {
+            height:400px;
+            left: (0 - ($gutter-width * 2));
+            right: (0 - ($gutter-width * 2));
+        }
+    }
+}
+
+@media (min-width: $wide) {
+    .portfolio__project {
+        &__body-wrapper {
+            height: 400px;
+        }
+
+        &-hero {
+            height:400px;
+            left: (0 - ($gutter-width * 4));
+            right: (0 - ($gutter-width * 4));
         }
     }
 }
