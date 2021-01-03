@@ -36,7 +36,10 @@ class Showcase extends React.Component {
         return (
             <div className='portfolio__contact'>
                 <h1>Showcase</h1>
-                <p>Have a look at some of my work.</p>
+
+                <div className='portfolio__body-text'>
+                    <p>Have a look at some of my work.</p>
+                </div>
             </div>
         );
     }

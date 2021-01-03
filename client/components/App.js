@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Landing from '../pages/Landing';
 import Showcase from '../pages/Showcase';
 import Contact from '../pages/Contact';
+import ErrorPage from '../pages/ErrorPage';
 
 class App extends React.Component {
     constructor() {
@@ -32,6 +33,8 @@ class App extends React.Component {
                         <Route component={Landing} path='/home' />
                         <Route component={Showcase} path='/showcase' />
                         <Route component={Contact} path='/contact' />
+
+                        <Route component={ErrorPage} />
                     </Switch>
                 </div>
 
