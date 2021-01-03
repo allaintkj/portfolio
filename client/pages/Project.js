@@ -2,8 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
 
-import projects from '../projects';
-
 // sanity helper
 import sanityClient from '../../sanityClient';
 
@@ -62,37 +60,28 @@ class Project extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
 
-        projects.forEach((project) => {
-            if (project._id == this.props.match.params.id) {
-                this.setState({
-                    loading: false,
-                    project: project
-                });
-            }
+        sanityClient.fetch(`*[_type == 'project' && _id == '${this.props.match.params.id}']{
+            _id,
+            title,
+            slug,
+            mainImage,
+            excerpt,
+            description,
+            projectType,
+            repository,
+            demo,
+            techs
+        }`).then(result => {
+            this.setState({
+                loading: false,
+                project: result[0]
+            });
+        }).catch(() => {
+            this.setState({
+                loading: false,
+                project: false
+            });
         });
-
-        // sanityClient.fetch(`*[_type == 'project' && _id == '${this.props.match.params.id}']{
-        //     _id,
-        //     title,
-        //     slug,
-        //     mainImage,
-        //     excerpt,
-        //     description,
-        //     projectType,
-        //     repository,
-        //     demo,
-        //     techs
-        // }`).then(result => {
-        //     this.setState({
-        //         loading: false,
-        //         project: result[0]
-        //     });
-        // }).catch(() => {
-        //     this.setState({
-        //         loading: false,
-        //         project: false
-        //     });
-        // });
     }
 
     render() {

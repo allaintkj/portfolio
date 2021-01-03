@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     left: 0;
-    padding: 1em 1.5em;
+    padding: 1em $gutter-width;
     position: fixed;
     right: 0;
     z-index: 999;
@@ -30,5 +30,17 @@
 
     &__nav {
         text-align: right;
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__header {
+        padding: 1em ($gutter-width * 2);
+    }
+}
+
+@media (min-width: $wide) {
+    .portfolio__header {
+        padding: 1em ($gutter-width * 4);
     }
 }
