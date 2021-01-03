@@ -1,61 +1,33 @@
 .portfolio__header {
-    background-color: $graydark;
-    border-bottom: 1px solid $orange;
-    display: block;
-    font-size: 1.5rem;
+    align-items: center;
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    left: 1.5rem;
     padding: 1rem 0;
-    text-align: center;
-    text-transform: uppercase;
-    width: 100%;
+    position: fixed;
+    right: 1.5rem;
 
-    &__nav {
-        display: none;
+    &__burger {
+        cursor: pointer;
+        display: inline-block;
+        height: 35px;
+        transition: all 0.25s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 
-    &__title {
-        color: $white;
-
-        a {
-            border: none;
-            display: block;
-            padding: 0;
-
-            &:hover {
-                opacity: 0.5;
-            }
-        }
+    &__logo {
+        display: inline-block;
 
         img {
-            display: block;
-            height: 80px;
-            margin: auto;
-            width: 300px;
-        }
-
-        svg {
-            display: block;
+            height: 40px;
         }
     }
-}
 
-@media (min-width: $desktop) {
-    .portfolio__header {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-left: 2rem;
-        padding-right: 2rem;
-
-        &__nav {
-            display: block;
-        }
-    }
-}
-
-@media (min-width: $wide) {
-    .portfolio__header {
-        padding-left: 4rem;
-        padding-right: 4rem;
+    &__nav {
+        text-align: right;
     }
 }

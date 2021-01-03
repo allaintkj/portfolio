@@ -2,7 +2,7 @@
 $black: #000000;
 $gray: #999999;
 $graydark: #333333;
-$orange: #ff8a16;
+$orange: #D85800;
 $white: #ffffff;
 
 $phone: 576px;
@@ -11,8 +11,8 @@ $desktop: 992px;
 $wide: 1200px;
 
 @font-face {
-    font-family: 'OpenSans-Light';
-    src: url('fonts/OpenSans-Light.ttf');
+    font-family: 'OpenSans-Bold';
+    src: url('fonts/OpenSans-Bold.ttf');
 }
 
 @font-face {
@@ -20,74 +20,112 @@ $wide: 1200px;
     src: url('fonts/OpenSans-Regular.ttf');
 }
 
-// global styles
 * {
     box-sizing: border-box;
-    font-family: 'OpenSans-Regular';
     margin: 0;
+    padding: 0;
 }
 
 a {
-    background-color: $graydark;
-    border-bottom: 1px solid $orange;
-    color: $white;
     display: inline-block;
-    padding: 2px 5px;
+}
+
+body {
+    color: $graydark;
+    font-family: 'OpenSans-Regular';
+}
+
+h1, h2, h3 {
+    font-family: 'OpenSans-Bold';
+    margin-bottom: 4rem;
+}
+
+img {
+    display: inline-block;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link {
+    color: $graydark;
     text-decoration: none;
     transition: all 0.25s ease;
 
     &:hover {
-        background-color: transparent;
-        border-color: transparent;
+        color: $orange;
     }
-}
-
-a.nav-link {
-    border: 1px solid transparent;
-    background-color: $graydark;
-    color: $white;
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    position: relative;
-    text-transform: uppercase;
-    transition: all 0.25s ease;
 
     &--active {
-        border-color: $orange transparent;
+        color: $orange !important;
+    }
+}
+
+.portfolio {
+    padding: 0 1.5rem;
+
+    &__button {
+        background-color: $orange;
         color: $white;
-    }
-
-    &:hover {
-        @extend .nav-link--active;
-    }
-}
-
-body {
-    background-color: $graydark;
-    color: $white;
-    font-size: 1.2rem;
-}
-
-button {
-    font-size: 1.2rem;
-}
-
-h1, h2 {
-    font-family: 'OpenSans-Light';
-    font-weight: 100;
-}
-
-p {
-    &:not(:first-child) {
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'OpenSans-Bold';
         margin-top: 1rem;
+        padding: 0.75rem;
+        padding-left: 1.25rem;
+        position: relative;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        transform: translateX(-0.5rem);
+        width: 10rem;
+
+        &::before {
+            background-color: $orange;
+            content: '';
+            display: inline-block;
+            height: 100%;
+            position: absolute;
+            right: -0.75rem;
+            top: 0;
+            transform: skewX(-20deg);
+            transition: all 0.25s ease;
+            width: 1.5rem;
+            z-index: -1;
+        }
+
+        &:hover {
+            background-color: $black;
+
+            &::before {
+                background-color: $black;
+            }
+        }
+    }
+
+    &__nav-links {
+        text-align: center;
+
+        li {
+            margin-bottom: 2rem;
+        }
     }
 }
 
-// import partials
+.svg-inline--fa {
+    fill: $graydark;
+}
+
 @import './scss/App';
 @import './scss/Header';
-@import './scss/Mobile';
-@import './scss/Body';
-@import './scss/Showcase';
 @import './scss/Footer';
+@import './scss/MobileMenu';
+
+@import './scss/Landing';
+@import './scss/Contact';

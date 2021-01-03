@@ -1,0 +1,32 @@
+.portfolio__mobile {
+    &-close {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+
+        img {
+            cursor: pointer;
+            height: 35px;
+            transition: all 0.25s ease;
+            width: 30px;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &-menu {
+        align-items: center;
+        background-color: $white;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+}

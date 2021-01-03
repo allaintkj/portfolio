@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 // components
-import Nav from './Nav';
 
 // logo
-import Logo from '../img/logo.svg';
+import Logo from '../img/logo.tom.allain.svg';
+import NavButton from '../img/bars-solid.svg';
 
 class Header extends React.Component {
     constructor() {
@@ -14,17 +14,19 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div className='portfolio__header'>
-                <div className='portfolio__header__title'>
+            <header className='portfolio__header'>
+                <div className='portfolio__header__logo'>
                     <NavLink to='/'>
                         <img src={Logo} />
                     </NavLink>
                 </div>
 
                 <div className='portfolio__header__nav'>
-                    <Nav toggleMenu={false} />
+                    <img className='portfolio__header__burger'
+                        onClick={() => this.props.toggleMenu()}
+                        src={NavButton} />
                 </div>
-            </div>
+            </header>
         );
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Landing extends React.Component {
     constructor() {
@@ -7,17 +8,22 @@ class Landing extends React.Component {
 
     render() {
         return (
-            <div className='portfolio__body--inner'>
-                <div className='portfolio__body__title'>
-                    <h2 className='portfolio__body__title-text'>Welcome</h2>
+            <div className='portfolio__landing'>
+                <h1>Welcome</h1>
+
+                <div className='portfolio__landing-text'>
+                    <p>My name is Tom Allain.</p>
+                    <p>I am a web developer and an electrician.</p>
+                    <p>Currently based in Halifax, Nova Scotia.</p>
                 </div>
 
-                <div className='portfolio__body__text'>
-                    <p>Tom Allain</p>
-                    <p>Halifax, Nova Scotia</p>
-                    <p>Web Developer and Electrician</p>
-                    <p>Feel free to check out the <a href='/showcase'>showcase</a> and have a look at some of my work, or see how you can <a href='/contact'>contact</a> me.</p>
-                </div>
+                <NavLink className='portfolio__button'
+                    onClick={() => {
+                        if (this.props.toggleMenu) { this.props.toggleMenu(); }
+                    }}
+                    to='showcase'>
+                    Showcase
+                </NavLink>
             </div>
         );
     }
