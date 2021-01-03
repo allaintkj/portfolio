@@ -11,7 +11,7 @@ class Landing extends React.Component {
             <div className='portfolio__landing'>
                 <h1>Welcome</h1>
 
-                <div className='portfolio__landing-text'>
+                <div className='portfolio__body-text'>
                     <p>My name is Tom Allain.</p>
                     <p>I am a web developer and an electrician.</p>
                     <p>Currently based in Halifax, Nova Scotia.</p>

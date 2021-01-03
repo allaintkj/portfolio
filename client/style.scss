@@ -37,7 +37,7 @@ body {
 
 h1, h2, h3 {
     font-family: 'OpenSans-Bold';
-    margin: 2rem;
+    margin: 1em;
 }
 
 img {
@@ -45,13 +45,17 @@ img {
 }
 
 p {
-    margin: 1rem;
+    margin: 0.5em;
 }
 
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.hide {
+    display: none !important;
 }
 
 .link {
@@ -79,10 +83,10 @@ ul {
 }
 
 .portfolio {
-    padding: 0 1.5rem;
+    padding: 0 1.5em;
 
     &__body-text {
-        padding: 3rem 0;
+        padding: 3em 0;
     }
 
     &__button {
@@ -91,35 +95,15 @@ ul {
         cursor: pointer;
         display: inline-block;
         font-family: 'OpenSans-Bold';
-        margin-top: 1rem;
-        padding: 0.75rem;
-        padding-left: 1.25rem;
+        font-size: 0.9em;
+        margin-top: 1em;
+        padding: .75em;
         position: relative;
         text-decoration: none;
         transition: all 0.25s ease;
-        transform: translateX(-0.5rem);
-        width: 10rem;
-
-        &::before {
-            background-color: $orange;
-            content: '';
-            display: inline-block;
-            height: 100%;
-            position: absolute;
-            right: -0.75rem;
-            top: 0;
-            transform: skewX(-20deg);
-            transition: all 0.25s ease;
-            width: 1.5rem;
-            z-index: -1;
-        }
 
         &:hover {
             background-color: $black;
-
-            &::before {
-                background-color: $black;
-            }
         }
     }
 
@@ -127,13 +111,9 @@ ul {
         text-align: center;
 
         li {
-            margin-bottom: 2rem;
+            margin-bottom: 2em;
         }
     }
-}
-
-.svg-inline--fa {
-    fill: $graydark;
 }
 
 @import './scss/App';
@@ -142,4 +122,18 @@ ul {
 @import './scss/MobileMenu';
 
 @import './scss/Landing';
+@import './scss/Showcase';
+@import './scss/Project';
 @import './scss/Contact';
+
+@media (min-width: $phone) {
+    body {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: $tablet) {
+    body {
+        font-size: 20px;
+    }
+}

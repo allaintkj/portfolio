@@ -7,6 +7,7 @@ import Footer from './Footer';
 
 import Landing from '../pages/Landing';
 import Showcase from '../pages/Showcase';
+import Project from '../pages/Project';
 import Contact from '../pages/Contact';
 import ErrorPage from '../pages/ErrorPage';
 
@@ -31,6 +32,7 @@ class App extends React.Component {
                         <Route exact path='/'><Redirect from='/' to='/home' /></Route>
 
                         <Route component={Landing} path='/home' />
+                        <Route component={Project} path='/showcase/:id' />
                         <Route component={Showcase} path='/showcase' />
                         <Route component={Contact} path='/contact' />
 

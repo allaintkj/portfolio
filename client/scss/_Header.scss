@@ -3,10 +3,11 @@
     background-color: $white;
     display: flex;
     justify-content: space-between;
-    left: 1.5rem;
-    padding: 1rem 0;
+    left: 0;
+    padding: 1em 1.5em;
     position: fixed;
-    right: 1.5rem;
+    right: 0;
+    z-index: 999;
 
     &__burger {
         cursor: pointer;
