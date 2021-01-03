@@ -37,7 +37,7 @@ body {
 
 h1, h2, h3 {
     font-family: 'OpenSans-Bold';
-    margin-bottom: 4rem;
+    margin: 2rem;
 }
 
 img {
@@ -45,7 +45,7 @@ img {
 }
 
 p {
-    margin-bottom: 2rem;
+    margin: 1rem;
 }
 
 ul {
@@ -66,10 +66,24 @@ ul {
     &--active {
         color: $orange !important;
     }
+
+    &--body {
+        @extend .link;
+
+        border-bottom: 1px solid $graydark;
+
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+    }
 }
 
 .portfolio {
     padding: 0 1.5rem;
+
+    &__body-text {
+        padding: 3rem 0;
+    }
 
     &__button {
         background-color: $orange;

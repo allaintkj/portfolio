@@ -22,7 +22,7 @@ class Landing extends React.Component {
                         if (this.props.toggleMenu) { this.props.toggleMenu(); }
                     }}
                     to='showcase'>
-                    Showcase
+                    See My Work
                 </NavLink>
             </div>
         );

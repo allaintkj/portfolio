@@ -9,8 +9,11 @@ class Contact extends React.Component {
         return (
             <div className='portfolio__contact'>
                 <h1>Get in Touch</h1>
-                <p>I am always looking for my next opportunity.</p>
-                <p>Questions? Want to hire me? Get in touch.</p>
+
+                <div className='portfolio__body-text'>
+                    <p>I am always looking for my next opportunity.</p>
+                    <p>Questions? Want to hire me? Get in touch.</p>
+                </div>
 
                 <div className='portfolio__contact-links'>
                     <a className='portfolio__button'
