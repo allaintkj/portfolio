@@ -1,3 +1,40 @@
 .portfolio__landing {
-    //
+    display: flex;
+
+    &-text, &-img {
+        display: inline-block;
+        width: 100%;
+    }
+
+    &-img {
+        display: none;
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__landing {
+        &-text, &-img {
+            text-align: left;
+            width: 50%;
+        }
+
+        &-img {
+            display: inline-block;
+            text-align: right;
+
+            img {
+                height: 100%;
+                max-width: 500px;
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media (min-width: $fullhd) {
+    .portfolio__landing {
+        &-img {
+            padding-top: 1em;
+        }
+    }
 }

@@ -51,7 +51,25 @@
     }
 
     .link {
+        border-bottom: 1px solid $white;
+        color: $black;
+        font-weight: bold;
         margin: 2em 0 1em;
+
+        &:hover {
+            border-color: black;
+            color: $black;
+        }
+
+        img {
+            height: 1em;
+            padding-right: 1em;
+            transform: translateY(0.15em);
+        }
+    }
+
+    .portfolio__button {
+        margin: 0 0.5em;
     }
 }
 
