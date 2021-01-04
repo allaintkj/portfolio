@@ -1,10 +1,12 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+// components
 import Header from './Header';
 import MobileMenu from './MobileMenu';
 import Footer from './Footer';
 
+// pages
 import Landing from '../pages/Landing';
 import Showcase from '../pages/Showcase';
 import Project from '../pages/Project';
@@ -23,7 +25,9 @@ class App extends React.Component {
     render() {
         return (
             <div className='portfolio'>
-                <Header toggleMenu={() => this.setState({displayMenu: !this.state.displayMenu})} />
+                <Header displayMenu={this.state.displayMenu}
+                    toggleMenu={() => this.setState({displayMenu: !this.state.displayMenu})} />
+                    
                 <MobileMenu display={this.state.displayMenu}
                     toggleMenu={() => this.setState({displayMenu: !this.state.displayMenu})} />
 

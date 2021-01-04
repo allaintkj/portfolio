@@ -2,10 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 // components
+import Nav from './Nav';
 
-// logo
+// images
 import Logo from '../img/logo.tom.allain.svg';
-import NavButton from '../img/bars-solid.svg';
+import btnBurger from '../img/bars-solid.svg';
+import btnClose from '../img/times-solid.svg';
 
 class Header extends React.Component {
     constructor() {
@@ -24,7 +26,11 @@ class Header extends React.Component {
                 <div className='portfolio__header__nav'>
                     <img className='portfolio__header__burger'
                         onClick={() => this.props.toggleMenu()}
-                        src={NavButton} />
+                        src={this.props.displayMenu ? btnClose : btnBurger} />
+
+                    <div className='portfolio__header__links'>
+                        <Nav />
+                    </div>
                 </div>
             </header>
         );

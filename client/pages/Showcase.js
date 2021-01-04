@@ -26,8 +26,11 @@ class Showcase extends React.Component {
             );
         }
 
+        // sanity helper to fetch image
         let builder = imageUrlBuilder(sanityClient);
 
+        // map projects set to state
+        // returning listing of projects
         return this.state.projects.map(project => {
             return (
                 <li className='portfolio__showcase-item'
@@ -44,8 +47,10 @@ class Showcase extends React.Component {
     }
 
     componentDidMount() {
+        // reset scroll position when transitioning between showcase and single project
         window.scrollTo(0, 0);
 
+        // fetch all sanity projects
         sanityClient.fetch(`*[_type == 'project']{
             _id,
             title,
@@ -58,11 +63,13 @@ class Showcase extends React.Component {
             demo,
             techs
         }`).then(projects => {
+            // set the whole array in state
             this.setState({
                 loading: false,
                 projects: projects
             });
         }).catch(() => {
+            // no pojects returned
             this.setState({
                 loading: false,
                 projects: 0
