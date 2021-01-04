@@ -24,18 +24,18 @@ class Project extends React.Component {
 
         return (
             <React.Fragment>
-                <NavLink className='link'
-                    to='/showcase'>
-                    Back to Showcase
-                </NavLink>
-
                 <h1>{project.title}</h1>
 
-                <div className='portfolio__project__body-wrapper'>
+                <div className='portfolio__project__hero-wrapper'>
                     <div className='portfolio__project-hero'>
                         <img src={builder.image(project.mainImage)} />
                     </div>
                 </div>
+
+                <NavLink className='link'
+                    to='/showcase'>
+                    Back to Showcase
+                </NavLink>
                     
                 <p className='portfolio__body-text'>{project.excerpt}</p>
 

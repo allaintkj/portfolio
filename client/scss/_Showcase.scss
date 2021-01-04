@@ -27,7 +27,7 @@
             display: block;
             height: 100%;
             left: 0;
-            opacity: 0.8;
+            opacity: 0.9;
             position: absolute;
             top: 0;
             width: 100%;
@@ -37,13 +37,18 @@
 
     &-link {
         color: $white;
-        font-size: .8em;
+        font-weight: bold;
         left: 50%;
         position: absolute;
+        text-decoration: none;
         top: 50%;
         transform: translate(-50%, -50%);
         transition: all 0.25s ease;
         z-index: 1;
+
+        &:hover {
+            color: $orange;
+        }
     }
 
     &-wrapper {

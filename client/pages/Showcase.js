@@ -35,7 +35,7 @@ class Showcase extends React.Component {
             return (
                 <li className='portfolio__showcase-item'
                     key={`portfolio-project-${project._id}`}>
-                    <NavLink className='portfolio__button portfolio__showcase-link'
+                    <NavLink className='portfolio__showcase-link'
                         to={`/showcase/${project._id}`}>
                         {project.title}
                     </NavLink>

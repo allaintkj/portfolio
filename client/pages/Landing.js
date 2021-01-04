@@ -12,9 +12,9 @@ class Landing extends React.Component {
                 <h1>Welcome</h1>
 
                 <div className='portfolio__body-text'>
-                    <p>My name is Tom Allain.</p>
-                    <p>I am a web developer and an electrician.</p>
-                    <p>Currently based in Halifax, Nova Scotia.</p>
+                    <p>Tom Allain</p>
+                    <p>Web Developer and Electrician</p>
+                    <p>Halifax, Nova Scotia</p>
                 </div>
 
                 <NavLink className='portfolio__button'
