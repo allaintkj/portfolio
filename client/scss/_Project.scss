@@ -1,5 +1,7 @@
 .portfolio__project {
-    &__body-wrapper {
+    position: relative;
+
+    &__hero-wrapper {
         height: 200px;
         position: relative;
     }
@@ -11,6 +13,19 @@
         overflow: hidden;
         position: absolute;
         right: (0 - $gutter-width);
+        z-index: 0;
+
+        &::before {
+            background-color: $black;
+            content: '';
+            display: block;
+            left: 0;
+            height: 100%;
+            opacity: 0.9;
+            position: absolute;
+            right: 0;
+            z-index: 1;
+        }
 
         img {
             left: 50%;
@@ -21,28 +36,40 @@
             transform: translateX(-50%);
         }
     }
+
+    h1 {
+        align-items: center;
+        color: $white;
+        display: flex;
+        margin: 0;
+        height: 200px;
+        justify-content: center;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .link {
+        margin: 2em 0 1em;
+    }
 }
 
 @media (min-width: $tablet) {
     .portfolio__project {
-        &__body-wrapper {
+        &__hero-wrapper, h1 {
             height: 400px;
         }
 
         &-hero {
-            height:400px;
+            height: 400px;
         }
     }
 }
 
 @media (min-width: $desktop) {
     .portfolio__project {
-        &__body-wrapper {
-            height: 400px;
-        }
-
         &-hero {
-            height:400px;
             left: (0 - ($gutter-width * 2));
             right: (0 - ($gutter-width * 2));
         }
@@ -51,12 +78,7 @@
 
 @media (min-width: $wide) {
     .portfolio__project {
-        &__body-wrapper {
-            height: 400px;
-        }
-
         &-hero {
-            height:400px;
             left: (0 - ($gutter-width * 4));
             right: (0 - ($gutter-width * 4));
         }
