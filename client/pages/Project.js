@@ -19,6 +19,7 @@ class Project extends React.Component {
 
     buildSelectedProject() {
         let project = this.state.project;
+        // sanity helper to fetch image
         let builder = imageUrlBuilder(sanityClient);
 
         return (
@@ -58,8 +59,10 @@ class Project extends React.Component {
     }
 
     componentDidMount() {
+        // reset scroll position when transitioning between showcase and single project
         window.scrollTo(0, 0);
 
+        // fetch the sanity item from _id route param
         sanityClient.fetch(`*[_type == 'project' && _id == '${this.props.match.params.id}']{
             _id,
             title,
@@ -72,11 +75,13 @@ class Project extends React.Component {
             demo,
             techs
         }`).then(result => {
+            // set resulting project in state
             this.setState({
                 loading: false,
                 project: result[0]
             });
         }).catch(() => {
+            // nothing returned
             this.setState({
                 loading: false,
                 project: false

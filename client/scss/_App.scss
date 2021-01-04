@@ -3,3 +3,17 @@
     padding-top: 15vh;
     text-align: center;
 }
+
+@media (min-width: $desktop) {
+    .portfolio__body {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media (min-width: $fullhd) {
+    .portfolio__body {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}

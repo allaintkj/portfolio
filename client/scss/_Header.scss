@@ -20,6 +20,10 @@
         }
     }
 
+    &__links {
+        display: none;
+    }
+
     &__logo {
         display: inline-block;
 
@@ -35,7 +39,16 @@
 
 @media (min-width: $desktop) {
     .portfolio__header {
+        border-bottom: 1px solid $orange;
         padding: 1em ($gutter-width * 2);
+
+        &__burger {
+            display: none;
+        }
+
+        &__links {
+            display: block;
+        }
     }
 }
 

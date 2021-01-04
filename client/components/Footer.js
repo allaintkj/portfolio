@@ -1,5 +1,6 @@
 import React from 'react';
 
+// images
 import GitHub from '../img/icon-github.svg';
 import LinkedIn from '../img/icon-linkedin.svg';
 import Email from '../img/icon-email.svg';

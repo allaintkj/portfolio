@@ -9,6 +9,7 @@ $phone: 576px;
 $tablet: 768px;
 $desktop: 992px;
 $wide: 1200px;
+$fullhd: 1408px;
 
 $gutter-width: 1.5em;
 
@@ -141,15 +142,32 @@ ul {
 
     .portfolio {
         padding: 0 ($gutter-width * 2);
+
+        &__nav-links {
+            text-align: right;
+
+            li {
+                display: inline-block;
+                margin-bottom: 0;
+
+                &:not(:first-child) {
+                    margin-left: 1em;
+                }
+            }
+        }
     }
 }
 
 @media (min-width: $wide) {
-    body {
-        font-size: 22px;
-    }
-
     .portfolio {
         padding: 0 ($gutter-width * 4);
+
+        &__nav-links {
+            li {
+                &:not(:first-child) {
+                    margin-left: 2em;
+                }
+            }
+        }
     }
 }
