@@ -51,8 +51,39 @@
         }
     }
 
-    &-wrapper {
-        display: block;
+    &-links {
         padding: 1em 0;
+    }
+
+    &-wrapper {
+        //
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__showcase {
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            display: inline-block;
+            margin: 0;
+        }
+
+        &-links {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        &-wrapper {
+            &--left {
+                text-align: left;
+            }
+
+            &--right {
+                max-width: 500px;
+            }
+        }
     }
 }

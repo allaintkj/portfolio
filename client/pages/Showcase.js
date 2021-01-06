@@ -80,16 +80,20 @@ class Showcase extends React.Component {
     render() {
         return (
             <div className='portfolio__showcase'>
-                <h1>Showcase</h1>
+                <div className='portfolio__showcase-wrapper--left'>
+                    <h1>Showcase</h1>
 
-                <div className='portfolio__body-text'>
-                    <p>Have a look at some of my work.</p>
+                    <div className='portfolio__body-text'>
+                        <p>Have a look at some of my work.</p>
+                    </div>
                 </div>
 
-                <ul className='portfolio__showcase-wrapper'>
-                    {this.state.loading ? <li>Fetching...</li> : null}
-                    {this.state.loading ? null : this.buildProjectList()}
-                </ul>
+                <div className='portfolio__showcase-wrapper--right'>
+                    <ul className='portfolio__showcase-links'>
+                        {this.state.loading ? <li>Fetching...</li> : null}
+                        {this.state.loading ? null : this.buildProjectList()}
+                    </ul>
+                </div>
             </div>
         );
     }

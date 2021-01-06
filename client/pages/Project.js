@@ -26,35 +26,47 @@ class Project extends React.Component {
 
         return (
             <React.Fragment>
-                <h1>{project.title}</h1>
+                <div className='portfolio__project-col'>
+                    <h1 className='mobile'>{project.title}</h1>
 
-                <div className='portfolio__project__hero-wrapper'>
-                    <div className='portfolio__project-hero'>
-                        <img src={builder.image(project.mainImage)} />
+                    <div className='portfolio__project__hero-wrapper'>
+                        <div className='portfolio__project-hero'>
+                            <img src={builder.image(project.mainImage)} />
+                        </div>
                     </div>
+
+                    <NavLink className='link mobile'
+                        to='/showcase'>
+                        <img src={arrow} />
+                        Back to Showcase
+                    </NavLink>
                 </div>
-
-                <NavLink className='link'
-                    to='/showcase'>
-                    <img src={arrow} />
-                    Back to Showcase
-                </NavLink>
                     
-                <p className='portfolio__body-text'>{project.excerpt}</p>
+                <div className='portfolio__project-col'>
+                    <NavLink className='link desktop'
+                        to='/showcase'>
+                        <img src={arrow} />
+                        Back to Showcase
+                    </NavLink>
 
-                <a className={`portfolio__button ${project.demo ? '' : 'hide'}`}
-                    href={project.demo ? project.demo : '/'}
-                    rel='noopener noreferrer'
-                    target='_blank'>
-                    View Demo
-                </a>
+                    <h1 className='desktop'>{project.title}</h1>
 
-                <a className={`portfolio__button ${project.repository ? '' : 'hide'}`}
-                    href={project.repository ? project.repository : '/'}
-                    rel='noopener noreferrer'
-                    target='_blank'>
-                    View Repo
-                </a>
+                    <p className='portfolio__body-text'>{project.excerpt}</p>
+
+                    <a className={`portfolio__button ${project.demo ? '' : 'hide'}`}
+                        href={project.demo ? project.demo : '/'}
+                        rel='noopener noreferrer'
+                        target='_blank'>
+                        View Demo
+                    </a>
+
+                    <a className={`portfolio__button ${project.repository ? '' : 'hide'}`}
+                        href={project.repository ? project.repository : '/'}
+                        rel='noopener noreferrer'
+                        target='_blank'>
+                        View Repo
+                    </a>
+                </div>
             </React.Fragment>
         );
     }
