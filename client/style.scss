@@ -167,7 +167,7 @@ ul {
         text-align: center;
 
         li {
-            margin-bottom: 2em;
+            margin-bottom: 3em;
         }
     }
 }
@@ -201,19 +201,7 @@ ul {
                 margin-bottom: 0;
 
                 &:not(:first-child) {
-                    margin-left: 1em;
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: $wide) {
-    .portfolio {
-        &__nav-links {
-            li {
-                &:not(:first-child) {
-                    margin-left: 2em;
+                    margin-left: 3em;
                 }
             }
         }

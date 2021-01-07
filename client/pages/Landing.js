@@ -21,10 +21,7 @@ class Landing extends React.Component {
                     </div>
 
                     <NavLink className='portfolio__button'
-                        onClick={() => {
-                            if (this.props.toggleMenu) { this.props.toggleMenu(); }
-                        }}
-                        to='showcase'>
+                        to='/showcase'>
                         See My Work
                     </NavLink>
                 </div>

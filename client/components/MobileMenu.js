@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 // components
@@ -21,5 +22,10 @@ class MobileMenu extends React.Component {
         );
     }
 }
+
+MobileMenu.propTypes = {
+    display: PropTypes.bool,
+    toggleMenu: PropTypes.func
+};
 
 export default MobileMenu;

@@ -17,11 +17,17 @@ class App extends React.Component {
         super();
 
         this.state = {
-            displayMenu: 0
+            displayMenu: false
         };
     }
 
     render() {
+        // close the menu if the window is resized
+        // i.e. user switches from portait to landscape
+        window.addEventListener('resize', () => {
+            this.setState({displayMenu: false});
+        });
+
         return (
             <div className='portfolio'>
                 <Header displayMenu={this.state.displayMenu}
