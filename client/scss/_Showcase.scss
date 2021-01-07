@@ -11,7 +11,7 @@
             box-shadow: 0 0 5px 0 $graydark;
             height: auto;
             margin: 0 auto;
-            margin-bottom: 1em;
+            margin-bottom: 2em;
             width: 100%;
         }
     }
@@ -19,6 +19,7 @@
     &-row, &-row--featured, &-row--reverse {
         display: flex;
         flex-direction: column-reverse;
+        margin: 0 0 5em;
         position: relative;
 
         .portfolio__body-text {
@@ -27,7 +28,6 @@
     }
 
     &-row, &-row--reverse {
-        margin-bottom: 1em;
         padding-bottom: 1em;
 
         .portfolio__body-text {
@@ -47,6 +47,10 @@
         text-align: center;
         top: 0;
         width: 100%;
+    }
+
+    h2.more-projects {
+        margin-bottom: 3em;
     }
 
     p.featured {

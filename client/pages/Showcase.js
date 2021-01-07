@@ -70,7 +70,7 @@ class Showcase extends React.Component {
                         </div>
                     </div>
 
-                    {index == 0 ? <h2 className='txt-center'>More Projects</h2> : null}
+                    {index == 0 ? <h2 className='txt-center more-projects'>More Projects</h2> : null}
                 </React.Fragment>
             );
         });
