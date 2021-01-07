@@ -8,9 +8,10 @@
         display: block;
 
         img {
+            box-shadow: 0 0 5px 0 $graydark;
             height: auto;
             margin: 0 auto;
-            padding: 1em 0;
+            margin-bottom: 1em;
             width: 100%;
         }
     }
@@ -19,19 +20,32 @@
         display: flex;
         flex-direction: column-reverse;
         position: relative;
+
+        .portfolio__body-text {
+            text-align: center;
+        }
     }
 
     &-row, &-row--reverse {
-        margin-bottom: 2em;
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+
+        .portfolio__body-text {
+            padding: 0 1em;
+        }
+    }
+
+    &-row--reverse {
+        background-color: #FFF2E6;
     }
 
     &__title {
         background-color: rgba(0, 0, 0, 0.9);
         color: $white;
-        padding-top: 2em;
+        padding: 2em 1em 0;
         position: absolute;
         text-align: center;
-        top: 1em;
+        top: 0;
         width: 100%;
     }
 
@@ -43,7 +57,7 @@
 @media (min-width: $desktop) {
     .portfolio__showcase {
         &__buttons {
-            justify-content: left;
+            justify-content: flex-start;
         }
 
         &-col {
@@ -51,6 +65,8 @@
             width: 48%;
 
             img {
+                margin-bottom: 0;
+                padding-bottom: 0;
                 width: 100%;
             }
         }
@@ -63,15 +79,34 @@
             overflow: hidden;
             margin: 0 auto 6%;
             width: 95%;
+
+            .portfolio__body-text {
+                text-align: left;
+            }
+        }
+
+        &-row, &-row--reverse {
+            padding: 1em;
+
+            .portfolio__body-text {
+                padding: 0;
+            }
         }
 
         &-row--featured {
             height: 57vh;
+            padding-left: 5px;
+            padding-right: 5px;
             width: 100%;
         }
 
         &-row--reverse {
             flex-direction: row-reverse;
+
+            &::before {
+                left: (0 - $gutter-desktop);
+                right: (0 - $gutter-desktop);
+            }
         }
 
         &__title {
@@ -88,7 +123,12 @@
 
 @media (min-width: $wide) {
     .portfolio__showcase {
+        &-row--featured {
+            width: 90%;
+        }
+
         &-row, &-row--reverse {
+            padding: 1.5em;
             width: 85%;
         }
     }
@@ -96,7 +136,12 @@
 
 @media (min-width: $fullhd) {
     .portfolio__showcase {
+        &-row--featured {
+            width: 85%;
+        }
+
         &-row, &-row--reverse {
+            padding: 2em;
             width: 75%;
         }
     }

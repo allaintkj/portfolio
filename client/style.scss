@@ -128,6 +128,7 @@ ul {
         padding-right: 2em;
         position: relative;
         text-decoration: none;
+        z-index: 1;
 
         &::before {
             background-color: $orange;
@@ -178,7 +179,6 @@ ul {
 
 @import './scss/Landing';
 @import './scss/Showcase';
-@import './scss/Project';
 @import './scss/Contact';
 
 @media (min-width: $phone) {
