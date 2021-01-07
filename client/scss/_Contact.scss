@@ -1,5 +1,28 @@
-.portfolio__contact-links {
-    align-items: center;
+.portfolio__contact {
     display: flex;
     flex-direction: column;
+    height: 90%;
+    justify-content: space-around;
+
+    &-col {
+        text-align: center;
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__contact {
+        height: 90%;
+        justify-content: space-around;
+
+        &-links {
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: $fullhd) {
+    .portfolio__contact {
+        margin: 0 auto;
+        width: 75%;
+    }
 }

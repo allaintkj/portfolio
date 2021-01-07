@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -36,5 +37,10 @@ class Header extends React.Component {
         );
     }
 }
+
+Header.propTypes = {
+    displayMenu: PropTypes.bool,
+    toggleMenu: PropTypes.func
+};
 
 export default Header;

@@ -1,57 +1,152 @@
 .portfolio__showcase {
-    &-image {
-        display: block;
-        height: 100%;
-        left: 50%;
-        max-width: 120%;
-        min-width: 100%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    &__buttons {
+        display: flex;
+        justify-content: center;
     }
 
-    &-item {
-        box-shadow: 0 0 5px 0 #000000;
+    &-col, &-row {
         display: block;
-        height: 230px;
-        margin: 0 auto;
-        overflow: hidden;
-        position: relative;
-        transition: all 0.25s ease;
-        width: 250px;
-        z-index: 0;
 
-        &::before {
-            background-color: $black;
-            content: '';
-            display: block;
-            height: 100%;
-            left: 0;
-            opacity: 0.9;
-            position: absolute;
-            top: 0;
+        img {
+            box-shadow: 0 0 5px 0 $graydark;
+            height: auto;
+            margin: 0 auto;
+            margin-bottom: 2em;
             width: 100%;
-            z-index: 1;
         }
     }
 
-    &-link {
+    &-row, &-row--featured, &-row--reverse {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0 0 5em;
+        position: relative;
+
+        .portfolio__body-text {
+            text-align: center;
+        }
+    }
+
+    &-row, &-row--reverse {
+        padding-bottom: 1em;
+
+        .portfolio__body-text {
+            padding: 0 1em;
+        }
+    }
+
+    &-row--reverse {
+        background-color: #FFF2E6;
+    }
+
+    &__title {
+        background-color: rgba(0, 0, 0, 0.9);
         color: $white;
-        font-weight: bold;
-        left: 50%;
+        padding: 2em 1em 0;
         position: absolute;
-        text-decoration: none;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: all 0.25s ease;
-        z-index: 1;
-
-        &:hover {
-            color: $orange;
-        }
+        text-align: center;
+        top: 0;
+        width: 100%;
     }
 
-    &-wrapper {
-        display: block;
+    h2.more-projects {
+        margin-bottom: 3em;
+    }
+
+    p.featured {
+        margin: 0;
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__showcase {
+        &__buttons {
+            justify-content: flex-start;
+        }
+
+        &-col {
+            position: relative;
+            width: 48%;
+
+            img {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                width: 100%;
+            }
+        }
+
+        &-row, &-row--reverse, &-row--featured {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            overflow: hidden;
+            margin: 0 auto 6%;
+            width: 95%;
+
+            .portfolio__body-text {
+                text-align: left;
+            }
+        }
+
+        &-row, &-row--reverse {
+            padding: 1em;
+
+            .portfolio__body-text {
+                padding: 0;
+            }
+        }
+
+        &-row--featured {
+            height: 57vh;
+            padding-left: 5px;
+            padding-right: 5px;
+            width: 100%;
+        }
+
+        &-row--reverse {
+            flex-direction: row-reverse;
+
+            &::before {
+                left: (0 - $gutter-desktop);
+                right: (0 - $gutter-desktop);
+            }
+        }
+
+        &__title {
+            background-color: transparent;
+            color: $graydark;
+            padding: 0;
+            position: relative;
+            text-align: left;
+            top: auto;
+            width: auto;
+        }
+    }
+}
+
+@media (min-width: $wide) {
+    .portfolio__showcase {
+        &-row--featured {
+            width: 90%;
+        }
+
+        &-row, &-row--reverse {
+            padding: 1.5em;
+            width: 85%;
+        }
+    }
+}
+
+@media (min-width: $fullhd) {
+    .portfolio__showcase {
+        &-row--featured {
+            width: 85%;
+        }
+
+        &-row, &-row--reverse {
+            padding: 2em;
+            width: 75%;
+        }
     }
 }

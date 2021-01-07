@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
 
 // sanity helper
@@ -19,29 +18,60 @@ class Showcase extends React.Component {
 
     buildProjectList() {
         if (this.state.projects == 0) {
-            return (
-                <li>
-                    No projects to display.
-                </li>
-            );
+            return <p className='txt-center'>No projects to display.</p>;
         }
 
         // sanity helper to fetch image
         let builder = imageUrlBuilder(sanityClient);
 
         // map projects set to state
-        // returning listing of projects
-        return this.state.projects.map(project => {
-            return (
-                <li className='portfolio__showcase-item'
-                    key={`portfolio-project-${project._id}`}>
-                    <NavLink className='portfolio__showcase-link'
-                        to={`/showcase/${project._id}`}>
-                        {project.title}
-                    </NavLink>
+        // return listing of projects
+        return this.state.projects.map((project, index) => {
+            let rowClass = index == 0 ? '--featured' : (index % 2 == 0 ? '' : '--reverse');
+            let isFeatured = index == 0;
+            let repoButtonClass = `portfolio__button${project.demo ? '--reverse' : ''}`;
 
-                    <img className='portfolio__showcase-image' src={builder.image(project.mainImage)} />
-                </li>
+            return (
+                <React.Fragment key={`portfolio-project-${project._id}`}>
+                    <div className={`portfolio__showcase-row${rowClass}`}>
+                        <div className='portfolio__showcase-col'>
+                            <div className='portfolio__showcase__title'>
+                                <p className={`featured ${isFeatured ? '' : 'hide'}`}>Featured</p>
+                                <h1>{project.title}</h1>
+                            </div>
+
+                            <div className='portfolio__body-text'>
+                                {project.description}
+                            </div>
+
+                            <ul className='portfolio__showcase__buttons'>
+                                <li>
+                                    <a className={`portfolio__button ${project.demo ? '' : 'hide'}`}
+                                        href={project.demo ? project.demo : '/'}
+                                        rel='noopener noreferrer'
+                                        target='_blank'>
+                                        View Demo
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a className={`${repoButtonClass} ${project.repository ? '' : 'hide'}`}
+                                        href={project.repository ? project.repository : '/'}
+                                        rel='noopener noreferrer'
+                                        target='_blank'>
+                                        View Repo
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className='portfolio__showcase-col'>
+                            <img src={builder.image(project.mainImage)} />
+                        </div>
+                    </div>
+
+                    {index == 0 ? <h2 className='txt-center more-projects'>More Projects</h2> : null}
+                </React.Fragment>
             );
         });
     }
@@ -80,18 +110,80 @@ class Showcase extends React.Component {
     render() {
         return (
             <div className='portfolio__showcase'>
-                <h1>Showcase</h1>
-
-                <div className='portfolio__body-text'>
-                    <p>Have a look at some of my work.</p>
-                </div>
-
-                <ul className='portfolio__showcase-wrapper'>
-                    {this.state.loading ? <li>Fetching...</li> : null}
-                    {this.state.loading ? null : this.buildProjectList()}
-                </ul>
+                {this.state.loading ? <p className='txt-center'>Fetching...</p> : null}
+                {this.state.loading ? null : this.buildProjectList()}
             </div>
         );
+
+        // return (
+        //     <div className='portfolio__showcase'>
+        //         <div className='portfolio__showcase-row--featured'>
+        //             <div className='portfolio__showcase-col'>
+        //                 <div className='portfolio__showcase__title'>
+        //                     <p className='featured'>Featured</p>
+        //                     <h1>Caribou Woods</h1>
+        //                 </div>
+
+        //                 <div className='portfolio__body-text'>
+        //                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
+        //                 </div>
+
+        //                 <ul className='portfolio__showcase__buttons'>
+        //                     <li><a className='portfolio__button'>View Demo</a></li>
+        //                     <li><a className='portfolio__button--reverse'>View Repo</a></li>
+        //                 </ul>
+        //             </div>
+
+        //             <div className='portfolio__showcase-col'>
+        //                 <img src={image} />
+        //             </div>
+        //         </div>
+
+        //         <h2 className='txt-center'>More Projects</h2>
+
+        //         <div className='portfolio__showcase-row--reverse'>
+        //             <div className='portfolio__showcase-col'>
+        //                 <div className='portfolio__showcase__title'>
+        //                     <h1>Caribou Woods</h1>
+        //                 </div>
+
+        //                 <div className='portfolio__body-text'>
+        //                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
+        //                 </div>
+
+        //                 <ul className='portfolio__showcase__buttons'>
+        //                     <li><a className='portfolio__button'>View Demo</a></li>
+        //                     <li><a className='portfolio__button--reverse'>View Repo</a></li>
+        //                 </ul>
+        //             </div>
+
+        //             <div className='portfolio__showcase-col'>
+        //                 <img src={image} />
+        //             </div>
+        //         </div>
+                
+        //         <div className='portfolio__showcase-row'>
+        //             <div className='portfolio__showcase-col'>
+        //                 <div className='portfolio__showcase__title'>
+        //                     <h1>Caribou Woods</h1>
+        //                 </div>
+
+        //                 <div className='portfolio__body-text'>
+        //                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
+        //                 </div>
+
+        //                 <ul className='portfolio__showcase__buttons'>
+        //                     <li><a className='portfolio__button'>View Demo</a></li>
+        //                     <li><a className='portfolio__button--reverse'>View Repo</a></li>
+        //                 </ul>
+        //             </div>
+
+        //             <div className='portfolio__showcase-col'>
+        //                 <img src={image} />
+        //             </div>
+        //         </div>
+        //     </div>
+        // );
     }
 }
 

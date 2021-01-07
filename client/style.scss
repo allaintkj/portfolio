@@ -11,7 +11,10 @@ $desktop: 992px;
 $wide: 1200px;
 $fullhd: 1408px;
 
-$gutter-width: 1.5em;
+$gutter: 1.5em;
+$gutter-desktop: 3em;
+$gutter-wide: 6em;
+$gutter-fullhd: 8em;
 
 @font-face {
     font-family: 'OpenSans-Bold';
@@ -40,15 +43,17 @@ body {
 
 h1, h2, h3 {
     font-family: 'OpenSans-Bold';
-    margin: 1em;
+    margin-bottom: 1.5em;
 }
 
 img {
-    display: inline-block;
+    display: block;
 }
 
 p {
-    margin: 1em;
+    &:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
 }
 
 ul {
@@ -85,23 +90,41 @@ ul {
     }
 }
 
-.portfolio {
-    padding: 0 $gutter-width;
-
-    &__body-text {
-        padding: 2em 0;
+.txt {
+    &-center {
+        text-align: center;
     }
 
-    &__button {
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+}
+
+.portfolio {
+    overflow-x: hidden;
+    padding: 0 $gutter;
+
+    &__body-text {
+        margin-bottom: 2em
+    }
+
+    &__button, &__button--reverse {
         color: $white;
+        cursor: pointer;
         font-family: 'OpenSans-Bold';
         font-size: .9em;
-        margin: 1em;
+        margin: 0;
+        margin-right: 5px;
         overflow: hidden;
         padding: 0.75em 1em;
         padding-right: 2em;
         position: relative;
         text-decoration: none;
+        z-index: 1;
 
         &::before {
             background-color: $orange;
@@ -122,13 +145,25 @@ ul {
                 background-color: $black;
             }
         }
+
+        &--reverse {
+            margin: 0;
+            margin-left: 5px;
+            padding: 0.75em 1em;
+            padding-left: 2em;
+
+            &::before {
+                left: 0.6em;
+                right: -1em;
+            }
+        }
     }
 
     &__nav-links {
         text-align: center;
 
         li {
-            margin-bottom: 2em;
+            margin-bottom: 3em;
         }
     }
 }
@@ -140,7 +175,6 @@ ul {
 
 @import './scss/Landing';
 @import './scss/Showcase';
-@import './scss/Project';
 @import './scss/Contact';
 
 @media (min-width: $phone) {
@@ -155,8 +189,6 @@ ul {
     }
 
     .portfolio {
-        padding: 0 ($gutter-width * 2);
-
         &__nav-links {
             text-align: right;
 
@@ -165,21 +197,7 @@ ul {
                 margin-bottom: 0;
 
                 &:not(:first-child) {
-                    margin-left: 1em;
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: $wide) {
-    .portfolio {
-        padding: 0 ($gutter-width * 4);
-
-        &__nav-links {
-            li {
-                &:not(:first-child) {
-                    margin-left: 2em;
+                    margin-left: 3em;
                 }
             }
         }

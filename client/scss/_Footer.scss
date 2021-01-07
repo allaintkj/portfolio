@@ -1,26 +1,47 @@
 .portfolio__footer {
-    background-color: $white;
     bottom: 0;
+    height: 60px;
     left: 0;
+    padding: 0 $gutter;
     position: fixed;
     right: 0;
 }
 
 .portfolio__social {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    justify-content: center;
     text-align: center;
     
     &-icon {
-        height: 1.25rem;
-        width: 1.25rem;
+        display: block;
+        height: 1.5em;
+        width: 1.5em;
     }
 
     &-link {
         cursor: pointer;
-        margin: .75rem;
+        display: block;
+        margin: 0 1em;
         transition: all 0.25s ease;
 
         &:hover {
             opacity: 0.8;
         }
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio__footer {
+        padding-left: $gutter-desktop;
+        padding-right: $gutter-desktop;
+    }
+}
+
+@media (min-width: $fullhd) {
+    .portfolio__footer {
+        padding-left: $gutter-fullhd;
+        padding-right: $gutter-fullhd;
     }
 }
