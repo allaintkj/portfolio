@@ -11,7 +11,10 @@ $desktop: 992px;
 $wide: 1200px;
 $fullhd: 1408px;
 
-$gutter-width: 1.5em;
+$gutter: 1.5em;
+$gutter-desktop: 3em;
+$gutter-wide: 6em;
+$gutter-fullhd: 8em;
 
 @font-face {
     font-family: 'OpenSans-Bold';
@@ -40,16 +43,20 @@ body {
 
 h1, h2, h3 {
     font-family: 'OpenSans-Bold';
-    margin: 1em 0;
+    margin-bottom: 1.5em;
+}
+
+h2, h3 {
+    margin-top: 1.5em;
 }
 
 img {
-    display: inline-block;
+    display: block;
 }
 
 p {
     &:not(:last-child) {
-        margin-bottom: .75em;
+        margin-bottom: 0.5em;
     }
 }
 
@@ -87,20 +94,35 @@ ul {
     }
 }
 
-.portfolio {
-    overflow-x: hidden;
-    padding: 0 $gutter-width;
-
-    &__body-text {
-        padding: 2em 0 1em;
+.txt {
+    &-center {
+        text-align: center;
     }
 
-    &__button {
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+}
+
+.portfolio {
+    overflow-x: hidden;
+    padding: 0 $gutter;
+
+    &__body-text {
+        margin-bottom: 2em
+    }
+
+    &__button, &__button--reverse {
         color: $white;
+        cursor: pointer;
         font-family: 'OpenSans-Bold';
         font-size: .9em;
-        margin-right: 1em;
-        margin-top: 1em;
+        margin: 0;
+        margin-right: 5px;
         overflow: hidden;
         padding: 0.75em 1em;
         padding-right: 2em;
@@ -127,44 +149,15 @@ ul {
             }
         }
 
-        &:not(:last-child) {
-            margin-bottom: .75em;
-        }
-
         &--reverse {
-            color: $white;
-            font-family: 'OpenSans-Bold';
-            font-size: .9em;
-            margin-left: 1em;
-            margin-top: 1em;
-            overflow: hidden;
+            margin: 0;
+            margin-left: 5px;
             padding: 0.75em 1em;
             padding-left: 2em;
-            position: relative;
-            text-decoration: none;
 
             &::before {
-                background-color: $orange;
-                bottom: 0;
-                content: '';
-                display: block;
                 left: 0.6em;
-                position: absolute;
                 right: -1em;
-                top: 0;
-                transform: skewX(-20deg);
-                transition: all 0.25s ease;
-                z-index: -1;
-            }
-
-            &:hover {
-                &::before {
-                    background-color: $black;
-                }
-            }
-
-            &:not(:last-child) {
-                margin-bottom: .75em;
             }
         }
     }
@@ -200,8 +193,6 @@ ul {
     }
 
     .portfolio {
-        padding: 0 ($gutter-width * 2);
-
         &__nav-links {
             text-align: right;
 
@@ -219,8 +210,6 @@ ul {
 
 @media (min-width: $wide) {
     .portfolio {
-        padding: 0 ($gutter-width * 4);
-
         &__nav-links {
             li {
                 &:not(:first-child) {

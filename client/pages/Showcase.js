@@ -1,9 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import imageUrlBuilder from '@sanity/image-url';
+// import imageUrlBuilder from '@sanity/image-url';
 
 // sanity helper
-import sanityClient from '../../sanityClient';
+// import sanityClient from '../../sanityClient';
+
+import projects from '../projects.json';
+import image from '../img/hero.small.jpg';
 
 class Showcase extends React.Component {
     constructor() {
@@ -12,8 +15,8 @@ class Showcase extends React.Component {
         this.buildProjectList = this.buildProjectList.bind(this);
 
         this.state = {
-            loading: true,
-            projects: 0
+            loading: false,
+            projects: projects
         };
     }
 
@@ -27,7 +30,7 @@ class Showcase extends React.Component {
         }
 
         // sanity helper to fetch image
-        let builder = imageUrlBuilder(sanityClient);
+        // let builder = imageUrlBuilder(sanityClient);
 
         // map projects set to state
         // returning listing of projects
@@ -40,7 +43,7 @@ class Showcase extends React.Component {
                         {project.title}
                     </NavLink>
 
-                    <img className='portfolio__showcase-image' src={builder.image(project.mainImage)} />
+                    <img className='portfolio__showcase-image' />
                 </li>
             );
         });
@@ -51,48 +54,99 @@ class Showcase extends React.Component {
         window.scrollTo(0, 0);
 
         // fetch all sanity projects
-        sanityClient.fetch(`*[_type == 'project']{
-            _id,
-            title,
-            slug,
-            mainImage,
-            excerpt,
-            description,
-            projectType,
-            repository,
-            demo,
-            techs
-        }`).then(projects => {
-            // set the whole array in state
-            this.setState({
-                loading: false,
-                projects: projects
-            });
-        }).catch(() => {
-            // no pojects returned
-            this.setState({
-                loading: false,
-                projects: 0
-            });
-        });
+        // sanityClient.fetch(`*[_type == 'project']{
+        //     _id,
+        //     title,
+        //     slug,
+        //     mainImage,
+        //     excerpt,
+        //     description,
+        //     projectType,
+        //     repository,
+        //     demo,
+        //     techs
+        // }`).then(projects => {
+        //     // set the whole array in state
+        //     this.setState({
+        //         loading: false,
+        //         projects: projects
+        //     }, () => console.log(this.state));
+        // }).catch(() => {
+        //     // no pojects returned
+        //     this.setState({
+        //         loading: false,
+        //         projects: 0
+        //     });
+        // });
     }
 
     render() {
         return (
             <div className='portfolio__showcase'>
-                <div className='portfolio__showcase-wrapper--left'>
-                    <h1>Showcase</h1>
+                <div className='portfolio__showcase-row--featured'>
+                    <div className='portfolio__showcase-col'>
+                        <div className='portfolio__showcase__title'>
+                            <p className='featured'>Featured</p>
+                            <h1>Caribou Woods</h1>
+                        </div>
 
-                    <div className='portfolio__body-text'>
-                        <p>Have a look at some of my work.</p>
+                        <div className='portfolio__body-text'>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
+                        </div>
+
+                        <ul className='portfolio__showcase__buttons'>
+                            <li><a className='portfolio__button'>View Demo</a></li>
+                            <li><a className='portfolio__button--reverse'>View Repo</a></li>
+                        </ul>
+                    </div>
+
+                    <div className='portfolio__showcase-col'>
+                        <img src={image} />
                     </div>
                 </div>
 
-                <div className='portfolio__showcase-wrapper--right'>
-                    <ul className='portfolio__showcase-links'>
-                        {this.state.loading ? <li>Fetching...</li> : null}
-                        {this.state.loading ? null : this.buildProjectList()}
-                    </ul>
+                <h2 className='txt-center'>More Projects</h2>
+
+                <div className='portfolio__showcase-row--reverse'>
+                    <div className='portfolio__showcase-col'>
+                        <div className='portfolio__showcase__title'>
+                            <h1>Caribou Woods</h1>
+                        </div>
+
+                        <div className='portfolio__body-text'>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
+                        </div>
+
+                        <ul className='portfolio__showcase__buttons'>
+                            <li><a className='portfolio__button'>View Demo</a></li>
+                            <li><a className='portfolio__button--reverse'>View Repo</a></li>
+                        </ul>
+                    </div>
+
+                    <div className='portfolio__showcase-col'>
+                        <img src={image} />
+                    </div>
+                </div>
+                
+                <div className='portfolio__showcase-row'>
+                    <div className='portfolio__showcase-col'>
+                        <div className='portfolio__showcase__title'>
+                            <h1>Caribou Woods</h1>
+                        </div>
+
+                        <div className='portfolio__body-text'>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
+                        </div>
+
+                        <ul className='portfolio__showcase__buttons'>
+                            <li><a className='portfolio__button'>View Demo</a></li>
+                            <li><a className='portfolio__button--reverse'>View Repo</a></li>
+                        </ul>
+                    </div>
+
+                    <div className='portfolio__showcase-col'>
+                        <img src={image} />
+                    </div>
                 </div>
             </div>
         );

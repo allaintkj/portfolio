@@ -8,11 +8,11 @@
 
     &-hero {
         box-shadow: 0 0px 5px 0 #000000;
-        left: (0 - $gutter-width);
+        left: (0 - $gutter);
         height: 200px;
         overflow: hidden;
         position: absolute;
-        right: (0 - $gutter-width);
+        right: (0 - $gutter);
         z-index: 0;
 
         &::before {

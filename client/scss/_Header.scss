@@ -2,9 +2,10 @@
     align-items: center;
     background-color: $white;
     display: flex;
+    height: 100px;
     justify-content: space-between;
     left: 0;
-    padding: 1em $gutter-width;
+    padding: 1em $gutter;
     position: fixed;
     right: 0;
     z-index: 999;
@@ -40,7 +41,8 @@
 @media (min-width: $desktop) {
     .portfolio__header {
         border-bottom: 1px solid $orange;
-        padding: 1em ($gutter-width * 2);
+        padding-left: $gutter-desktop;
+        padding-right: $gutter-desktop;
 
         &__burger {
             display: none;
@@ -52,8 +54,9 @@
     }
 }
 
-@media (min-width: $wide) {
+@media (min-width: $fullhd) {
     .portfolio__header {
-        padding: 2em ($gutter-width * 4);
+        padding-left: $gutter-fullhd;
+        padding-right: $gutter-fullhd;
     }
 }

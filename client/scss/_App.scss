@@ -1,25 +1,21 @@
 .portfolio__body {
-    padding-bottom: 5rem;
-    padding-top: 15vh;
-    text-align: center;
+    bottom: 60px;
+    left: 0;
+    overflow-y: auto;
+    padding: $gutter;
+    position: absolute;
+    right: 0;
+    top: 100px;
 }
 
-// @media (min-width: $desktop) {
-//     .portfolio__body {
-//         padding-left: 10%;
-//         padding-right: 10%;
-//     }
-// }
-
-@media (min-width: $wide) {
+@media (min-width: $desktop) {
     .portfolio__body {
-        padding-top: 20vh;
+        padding: $gutter-desktop;
     }
 }
 
 @media (min-width: $fullhd) {
     .portfolio__body {
-        padding-left: 20%;
-        padding-right: 20%;
+        padding: $gutter-fullhd;
     }
 }
