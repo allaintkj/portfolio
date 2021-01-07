@@ -60,7 +60,7 @@ class Project extends React.Component {
                         View Demo
                     </a>
 
-                    <a className={`portfolio__button ${project.repository ? '' : 'hide'}`}
+                    <a className={`portfolio__button${project.demo ? '--reverse' : ''} ${project.repository ? '' : 'hide'}`}
                         href={project.repository ? project.repository : '/'}
                         rel='noopener noreferrer'
                         target='_blank'>

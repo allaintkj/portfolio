@@ -99,6 +99,8 @@ ul {
         color: $white;
         font-family: 'OpenSans-Bold';
         font-size: .9em;
+        margin-right: 1em;
+        margin-top: 1em;
         overflow: hidden;
         padding: 0.75em 1em;
         padding-right: 2em;
@@ -127,6 +129,43 @@ ul {
 
         &:not(:last-child) {
             margin-bottom: .75em;
+        }
+
+        &--reverse {
+            color: $white;
+            font-family: 'OpenSans-Bold';
+            font-size: .9em;
+            margin-left: 1em;
+            margin-top: 1em;
+            overflow: hidden;
+            padding: 0.75em 1em;
+            padding-left: 2em;
+            position: relative;
+            text-decoration: none;
+
+            &::before {
+                background-color: $orange;
+                bottom: 0;
+                content: '';
+                display: block;
+                left: 0.6em;
+                position: absolute;
+                right: -1em;
+                top: 0;
+                transform: skewX(-20deg);
+                transition: all 0.25s ease;
+                z-index: -1;
+            }
+
+            &:hover {
+                &::before {
+                    background-color: $black;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: .75em;
+            }
         }
     }
 
