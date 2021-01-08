@@ -1,16 +1,10 @@
 .portfolio__footer {
-    bottom: 0;
-    height: 60px;
-    left: 0;
-    padding: 0 $gutter;
-    position: fixed;
-    right: 0;
+    padding: 1em 0;
 }
 
 .portfolio__social {
     align-items: center;
     display: flex;
-    height: 60px;
     justify-content: center;
     text-align: center;
     
@@ -34,14 +28,13 @@
 
 @media (min-width: $desktop) {
     .portfolio__footer {
-        padding-left: $gutter-desktop;
-        padding-right: $gutter-desktop;
+        border-top: 1px solid $orange;
+        padding: 2em 0;
     }
 }
 
 @media (min-width: $fullhd) {
     .portfolio__footer {
-        padding-left: $gutter-fullhd;
-        padding-right: $gutter-fullhd;
+        padding: 4em 0;
     }
 }

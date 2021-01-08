@@ -8,7 +8,6 @@ import Nav from './Nav';
 // images
 import Logo from '../img/logo.tom.allain.svg';
 import btnBurger from '../img/bars-solid.svg';
-import btnClose from '../img/times-solid.svg';
 
 class Header extends React.Component {
     constructor() {
@@ -27,7 +26,7 @@ class Header extends React.Component {
                 <div className='portfolio__header__nav'>
                     <img className='portfolio__header__burger'
                         onClick={() => this.props.toggleMenu()}
-                        src={this.props.displayMenu ? btnClose : btnBurger} />
+                        src={btnBurger} />
 
                     <div className='portfolio__header__links'>
                         <Nav />
