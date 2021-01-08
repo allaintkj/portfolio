@@ -3,17 +3,25 @@
         position: absolute;
         right: 1.5rem;
         top: 1rem;
+        cursor: pointer;
+        height: 35px;
+        transition: all 0.25s ease;
+        width: 30px;
 
-        img {
-            cursor: pointer;
-            height: 35px;
-            transition: all 0.25s ease;
-            width: 30px;
-
-            &:hover {
-                opacity: 0.8;
-            }
+        &:hover {
+            opacity: 0.8;
         }
+
+        // img {
+        //     cursor: pointer;
+        //     height: 35px;
+        //     transition: all 0.25s ease;
+        //     width: 30px;
+
+        //     &:hover {
+        //         opacity: 0.8;
+        //     }
+        // }
     }
 
     &-menu {

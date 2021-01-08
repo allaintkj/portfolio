@@ -3,7 +3,8 @@ import React from 'react';
 
 // components
 import Nav from './Nav';
-import Footer from './Footer';
+
+import btnClose from '../img/times-solid.svg';
 
 class MobileMenu extends React.Component {
     constructor() {
@@ -15,9 +16,11 @@ class MobileMenu extends React.Component {
 
         return (
             <div className='portfolio__mobile-menu'>
-                <Nav toggleMenu={() => this.props.toggleMenu()} />
+                <img className='portfolio__mobile-close'
+                    onClick={() => this.props.toggleMenu()}
+                    src={btnClose} />
 
-                <Footer />
+                <Nav toggleMenu={() => this.props.toggleMenu()} />
             </div>
         );
     }

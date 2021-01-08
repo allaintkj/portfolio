@@ -2,13 +2,8 @@
     align-items: center;
     background-color: $white;
     display: flex;
-    height: 100px;
     justify-content: space-between;
-    left: 0;
-    padding: 1em $gutter;
-    position: fixed;
-    right: 0;
-    z-index: 999;
+    padding: 1em 0;
 
     &__burger {
         cursor: pointer;
@@ -29,7 +24,7 @@
         display: inline-block;
 
         img {
-            height: 40px;
+            height: 35px;
         }
     }
 
@@ -41,8 +36,6 @@
 @media (min-width: $desktop) {
     .portfolio__header {
         border-bottom: 1px solid $orange;
-        padding-left: $gutter-desktop;
-        padding-right: $gutter-desktop;
 
         &__burger {
             display: none;
@@ -51,12 +44,5 @@
         &__links {
             display: block;
         }
-    }
-}
-
-@media (min-width: $fullhd) {
-    .portfolio__header {
-        padding-left: $gutter-fullhd;
-        padding-right: $gutter-fullhd;
     }
 }
