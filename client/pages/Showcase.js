@@ -27,8 +27,9 @@ class Showcase extends React.Component {
         // map projects set to state
         // return listing of projects
         return this.state.projects.map((project, index) => {
-            let rowClass = index == 0 ? '--featured' : (index % 2 == 0 ? '' : '--reverse');
             let isFeatured = index == 0;
+            let isEven = index % 2 == 0;
+            let rowClass = isFeatured ? '--featured' : (isEven ? '' : '--reverse');
             let repoButtonClass = `portfolio__button${project.demo ? '--reverse' : ''}`;
 
             return (
@@ -37,7 +38,7 @@ class Showcase extends React.Component {
                         <div className='portfolio__showcase-col'>
                             <div className='portfolio__showcase__title'>
                                 <p className={`featured ${isFeatured ? '' : 'hide'}`}>Featured</p>
-                                <h1>{project.title}</h1>
+                                {isFeatured ? <h1>{project.title}</h1> : <h2>{project.title}</h2>}
                             </div>
 
                             <div className='portfolio__body-text'>
@@ -65,7 +66,7 @@ class Showcase extends React.Component {
                             </ul>
                         </div>
 
-                        <div className='portfolio__showcase-col'>
+                        <div className={`portfolio__showcase-col ${isFeatured ? 'txt-right' : (isEven ? 'txt-right' : '')}`}>
                             <img src={builder.image(project.mainImage)} />
                         </div>
                     </div>
@@ -114,76 +115,6 @@ class Showcase extends React.Component {
                 {this.state.loading ? null : this.buildProjectList()}
             </div>
         );
-
-        // return (
-        //     <div className='portfolio__showcase'>
-        //         <div className='portfolio__showcase-row--featured'>
-        //             <div className='portfolio__showcase-col'>
-        //                 <div className='portfolio__showcase__title'>
-        //                     <p className='featured'>Featured</p>
-        //                     <h1>Caribou Woods</h1>
-        //                 </div>
-
-        //                 <div className='portfolio__body-text'>
-        //                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
-        //                 </div>
-
-        //                 <ul className='portfolio__showcase__buttons'>
-        //                     <li><a className='portfolio__button'>View Demo</a></li>
-        //                     <li><a className='portfolio__button--reverse'>View Repo</a></li>
-        //                 </ul>
-        //             </div>
-
-        //             <div className='portfolio__showcase-col'>
-        //                 <img src={image} />
-        //             </div>
-        //         </div>
-
-        //         <h2 className='txt-center'>More Projects</h2>
-
-        //         <div className='portfolio__showcase-row--reverse'>
-        //             <div className='portfolio__showcase-col'>
-        //                 <div className='portfolio__showcase__title'>
-        //                     <h1>Caribou Woods</h1>
-        //                 </div>
-
-        //                 <div className='portfolio__body-text'>
-        //                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
-        //                 </div>
-
-        //                 <ul className='portfolio__showcase__buttons'>
-        //                     <li><a className='portfolio__button'>View Demo</a></li>
-        //                     <li><a className='portfolio__button--reverse'>View Repo</a></li>
-        //                 </ul>
-        //             </div>
-
-        //             <div className='portfolio__showcase-col'>
-        //                 <img src={image} />
-        //             </div>
-        //         </div>
-                
-        //         <div className='portfolio__showcase-row'>
-        //             <div className='portfolio__showcase-col'>
-        //                 <div className='portfolio__showcase__title'>
-        //                     <h1>Caribou Woods</h1>
-        //                 </div>
-
-        //                 <div className='portfolio__body-text'>
-        //                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec lacus et eros iaculis consequat. Sed lorem eros, vestibulum in felis eget, porta molestie nulla. Duis et dui felis
-        //                 </div>
-
-        //                 <ul className='portfolio__showcase__buttons'>
-        //                     <li><a className='portfolio__button'>View Demo</a></li>
-        //                     <li><a className='portfolio__button--reverse'>View Repo</a></li>
-        //                 </ul>
-        //             </div>
-
-        //             <div className='portfolio__showcase-col'>
-        //                 <img src={image} />
-        //             </div>
-        //         </div>
-        //     </div>
-        // );
     }
 }
 
