@@ -82,7 +82,7 @@ class Showcase extends React.Component {
         window.scrollTo(0, 0);
 
         // fetch all sanity projects
-        sanityClient.fetch(`*[_type == 'project'] | order(title) {
+        sanityClient.fetch(`*[_type == 'project'] | order(featured desc, title) {
             _id,
             title,
             slug,
@@ -90,6 +90,7 @@ class Showcase extends React.Component {
             excerpt,
             description,
             projectType,
+            featured,
             repository,
             demo,
             techs

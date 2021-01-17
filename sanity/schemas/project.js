@@ -47,6 +47,11 @@ export default {
       }
     },
     {
+      name: 'featured',
+      title: 'Featured Project',
+      type: 'boolean'
+    },
+    {
       name: 'repository',
       type: 'url',
     },
