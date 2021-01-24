@@ -112,7 +112,7 @@ ul {
         margin-bottom: 2em
     }
 
-    &__button, &__button--reverse {
+    &__button, &__button--reverse, &__button--outline {
         color: $white;
         cursor: pointer;
         font-family: 'OpenSans-Bold';
@@ -143,6 +143,24 @@ ul {
         &:hover {
             &::before {
                 background-color: $black;
+            }
+        }
+
+        &--outline {
+            border-right: 1px solid $orange;
+            color: $graydark;
+
+            &::before {
+                background-color: $white;
+                border: 1px solid $orange;
+            }
+
+            &:hover {
+                color: $white; 
+                
+                &::before {
+                    background-color: $orange;
+                }
             }
         }
 
