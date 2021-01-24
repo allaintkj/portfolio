@@ -46,3 +46,33 @@
         }
     }
 }
+
+@media (min-width: $desktop) {
+    .portfolio__header {
+        border-bottom: 1px solid $orange;
+        padding: 1.5em;
+
+        &__burger {
+            display: none;
+        }
+
+        &__links {
+            display: block;
+        }
+    }
+}
+
+@media (min-width: $fullhd) {
+    .portfolio__header {
+        border-bottom: 1px solid $orange;
+        padding: 3em;
+
+        &__burger {
+            display: none;
+        }
+
+        &__links {
+            display: block;
+        }
+    }
+}
