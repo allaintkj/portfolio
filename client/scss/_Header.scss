@@ -32,17 +32,27 @@
 
     &__logo {
         display: inline-block;
-        width: 50%;
+
+        a {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
         img {
+            display: block;
             height: 35px;
         }
     }
 
     &__nav {
-        display: inline-block;
+        display: block;
+        position: absolute;
+        right: 0;
         text-align: right;
-        width: 50%;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 
@@ -59,5 +69,23 @@
         &__links {
             display: block;
         }
+
+        &__logo {
+            img {
+                height: 40px;
+            }
+        }
     }
+}
+
+@media (min-width: $wide) {
+    .portfolio__header {
+        padding: 2em 0;
+
+        &__logo {
+            img {
+                height: 45px;
+            }
+        }
+    }   
 }
