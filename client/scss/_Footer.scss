@@ -1,5 +1,19 @@
 .portfolio__footer {
     padding: 1em 0;
+    position: relative;
+
+    &::before {
+        background-color: $orange;
+        content: '';
+        display: none;
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        width: 200vw;
+        z-index: -1;
+    }
 }
 
 .portfolio__social {
@@ -28,8 +42,11 @@
 
 @media (min-width: $desktop) {
     .portfolio__footer {
-        border-top: 1px solid $orange;
         padding: 2em 0;
+
+        &::before {
+            display: block;
+        }
     }
 }
 

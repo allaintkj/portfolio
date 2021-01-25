@@ -12,7 +12,7 @@ class Landing extends React.Component {
         return (
             <div className='portfolio__landing'>
                 <div className='portfolio__landing-text'>
-                    <h1>Lets Craft Something Elegant.</h1>
+                    <h1>Let&apos;s Craft Something Elegant</h1>
 
                     <div className='portfolio__body-text'>
                         <p>Tom Allain</p>
@@ -25,7 +25,7 @@ class Landing extends React.Component {
                         Get in Touch
                     </NavLink>
 
-                    <NavLink className='portfolio__button--reverse portfolio__button--outline'
+                    <NavLink className='portfolio__button portfolio__button--reverse'
                         to='/showcase'>
                         See My Work
                     </NavLink>

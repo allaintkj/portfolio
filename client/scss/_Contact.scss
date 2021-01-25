@@ -2,10 +2,9 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 90%;
     justify-content: space-around;
 
-    &-col {
+    &-col, &-col--left {
         text-align: center;
     }
 
@@ -20,18 +19,13 @@
 @media (min-width: $desktop) {
     .portfolio__contact {
         flex-direction: row;
-        height: 90%;
-        justify-content: space-around;
+
+        &-col--left {
+            text-align: left;
+        }
 
         &-links {
             text-align: center;
         }
-    }
-}
-
-@media (min-width: $fullhd) {
-    .portfolio__contact {
-        margin: 0 auto;
-        width: 75%;
     }
 }

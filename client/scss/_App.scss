@@ -1,3 +1,112 @@
-.portfolio__body {
-    margin: 8% 0 15vh;
+.portfolio {
+    overflow-x: hidden;
+    padding: 0 $gutter;
+
+    &__body {
+        margin: 5% 0;
+        padding: 5vh 0;
+
+        &-text {
+            margin-bottom: 2em
+        }
+    }
+
+    &__button, &__button--reverse {
+        color: $white;
+        cursor: pointer;
+        font-family: 'OpenSans-Bold';
+        font-size: .9em;
+        margin: 0;
+        margin-right: 5px;
+        overflow: hidden;
+        padding: 0.75em 1em;
+        padding-right: 2em;
+        position: relative;
+        text-decoration: none;
+        z-index: 1;
+
+        &::before {
+            background-color: $orange;
+            bottom: 0;
+            content: '';
+            display: block;
+            left: -1em;
+            position: absolute;
+            right: 0.6em;
+            top: 0;
+            transform: skewX(-20deg);
+            transition: all 0.25s ease;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: $white;
+
+            &::before {
+                background-color: $graydark;
+            }
+        }
+
+        &--reverse {
+            color: $graydark;
+            border-right: 1px solid $orange;
+            margin: 0;
+            margin-left: 5px;
+            padding: 0.75em 1em;
+            padding-left: 2em;
+
+            &::before {
+                background-color: $white;
+                border: 1px solid $orange;
+                left: 0.6em;
+                right: -1em;
+            }
+
+            &:hover {
+                color: $white;
+                border-color: $graydark;
+
+                &::before {
+                    border-color: $graydark;
+                }
+            }
+        }
+    }
+
+    &__nav-links {
+        text-align: center;
+
+        li {
+            margin-bottom: 3em;
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio {
+        &__nav-links {
+            text-align: right;
+
+            li {
+                display: inline-block;
+                margin-bottom: 0;
+
+                &:not(:first-child) {
+                    margin-left: 3em;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $wide) {
+    .portfolio {
+        padding: 0 $gutter-wide;
+    }
+}
+
+@media (min-width: $fullhd) {
+    .portfolio {
+        padding: 0 15%;
+    }
 }

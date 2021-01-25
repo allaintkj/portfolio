@@ -1,9 +1,19 @@
 .portfolio__header {
-    align-items: center;
-    background-color: $white;
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 0;
+    background-color: transparent;
+    padding: 1.5em 0;
+    position: relative;
+
+    &::after {
+        background-color: #FFF2E6;
+        bottom: 0;
+        content: '';
+        display: none;
+        left: -50vw;
+        position: absolute;
+        right: -50vw;
+        top: 0;
+        z-index: -1;
+    }
 
     &__burger {
         cursor: pointer;
@@ -22,6 +32,7 @@
 
     &__logo {
         display: inline-block;
+        width: 50%;
 
         img {
             height: 35px;
@@ -29,43 +40,17 @@
     }
 
     &__nav {
+        display: inline-block;
         text-align: right;
+        width: 50%;
     }
 }
 
 @media (min-width: $desktop) {
     .portfolio__header {
-        border-bottom: 1px solid $orange;
-
-        &__burger {
-            display: none;
-        }
-
-        &__links {
+        &::after {
             display: block;
         }
-    }
-}
-
-@media (min-width: $desktop) {
-    .portfolio__header {
-        border-bottom: 1px solid $orange;
-        padding: 1.5em;
-
-        &__burger {
-            display: none;
-        }
-
-        &__links {
-            display: block;
-        }
-    }
-}
-
-@media (min-width: $fullhd) {
-    .portfolio__header {
-        border-bottom: 1px solid $orange;
-        padding: 3em;
 
         &__burger {
             display: none;

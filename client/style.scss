@@ -14,7 +14,7 @@ $fullhd: 1408px;
 $gutter: 1.5em;
 $gutter-desktop: 3em;
 $gutter-wide: 6em;
-$gutter-fullhd: 8em;
+$gutter-fullhd: 10em;
 
 @font-face {
     font-family: 'OpenSans-Bold';
@@ -104,88 +104,6 @@ ul {
     }
 }
 
-.portfolio {
-    overflow-x: hidden;
-    padding: 0 $gutter;
-
-    &__body-text {
-        margin-bottom: 2em
-    }
-
-    &__button, &__button--reverse, &__button--outline {
-        color: $white;
-        cursor: pointer;
-        font-family: 'OpenSans-Bold';
-        font-size: .9em;
-        margin: 0;
-        margin-right: 5px;
-        overflow: hidden;
-        padding: 0.75em 1em;
-        padding-right: 2em;
-        position: relative;
-        text-decoration: none;
-        z-index: 1;
-
-        &::before {
-            background-color: $orange;
-            bottom: 0;
-            content: '';
-            display: block;
-            left: -1em;
-            position: absolute;
-            right: 0.6em;
-            top: 0;
-            transform: skewX(-20deg);
-            transition: all 0.25s ease;
-            z-index: -1;
-        }
-
-        &:hover {
-            &::before {
-                background-color: $black;
-            }
-        }
-
-        &--outline {
-            border-right: 1px solid $orange;
-            color: $graydark;
-
-            &::before {
-                background-color: $white;
-                border: 1px solid $orange;
-            }
-
-            &:hover {
-                color: $white; 
-                
-                &::before {
-                    background-color: $orange;
-                }
-            }
-        }
-
-        &--reverse {
-            margin: 0;
-            margin-left: 5px;
-            padding: 0.75em 1em;
-            padding-left: 2em;
-
-            &::before {
-                left: 0.6em;
-                right: -1em;
-            }
-        }
-    }
-
-    &__nav-links {
-        text-align: center;
-
-        li {
-            margin-bottom: 3em;
-        }
-    }
-}
-
 @import './scss/App';
 @import './scss/Header';
 @import './scss/Footer';
@@ -204,20 +122,5 @@ ul {
 @media (min-width: $desktop) {
     body {
         font-size: 20px;
-    }
-
-    .portfolio {
-        &__nav-links {
-            text-align: right;
-
-            li {
-                display: inline-block;
-                margin-bottom: 0;
-
-                &:not(:first-child) {
-                    margin-left: 3em;
-                }
-            }
-        }
     }
 }

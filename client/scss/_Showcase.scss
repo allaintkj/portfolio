@@ -50,7 +50,7 @@
     }
 
     h2.more-projects {
-        margin-bottom: 3em;
+        margin-bottom: 10vh;
     }
 
     p.featured {
@@ -99,9 +99,7 @@
         }
 
         &-row--featured {
-            height: 57vh;
-            padding-left: 5px;
-            padding-right: 5px;
+            padding: 5px;
             width: 100%;
         }
 
@@ -126,28 +124,28 @@
     }
 }
 
-@media (min-width: $wide) {
-    .portfolio__showcase {
-        &-row--featured {
-            width: 90%;
-        }
+// @media (min-width: $wide) {
+//     .portfolio__showcase {
+//         &-row--featured {
+//             width: 90%;
+//         }
 
-        &-row, &-row--reverse {
-            padding: 1.5em;
-            width: 85%;
-        }
-    }
-}
+//         &-row, &-row--reverse {
+//             padding: 1.5em;
+//             width: 85%;
+//         }
+//     }
+// }
 
-@media (min-width: $fullhd) {
-    .portfolio__showcase {
-        &-row--featured {
-            width: 85%;
-        }
+// @media (min-width: $fullhd) {
+//     .portfolio__showcase {
+//         &-row--featured {
+//             width: 85%;
+//         }
 
-        &-row, &-row--reverse {
-            padding: 2em;
-            width: 75%;
-        }
-    }
-}
+//         &-row, &-row--reverse {
+//             padding: 2em;
+//             width: 75%;
+//         }
+//     }
+// }
