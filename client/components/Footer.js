@@ -13,6 +13,8 @@ class Footer extends React.Component {
     render() {
         return (
             <div className='portfolio__footer'>
+                <div className='portfolio__footer__bg' />
+
                 <div className='portfolio__social'>
                     <a className='portfolio__social-link'
                         href='https://github.com/allaintkj'

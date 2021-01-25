@@ -15,11 +15,16 @@ class ErrorPage extends React.Component {
 
                     <div className='portfolio__body-text'>
                         <p>
-                            You are requesting a resource that does not exist. Have you seen the showcase yet?
+                            You are requesting a resource that does not exist. Have you seen the showcase yet? Or perhaps you&apos;d like to get in touch with me:
                         </p>
                     </div>
 
                     <a className='portfolio__button'
+                        href='/contact'>
+                        Get in Touch
+                    </a>
+
+                    <a className='portfolio__button--reverse'
                         href='/showcase'>
                         See My Work
                     </a>
