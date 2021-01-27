@@ -27,6 +27,17 @@ class Nav extends React.Component {
                         onClick={() => {
                             if (this.props.toggleMenu) { this.props.toggleMenu(); }
                         }}
+                        to='/skills'>
+                        Skills
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink activeClassName='link--active'
+                        className='link'
+                        onClick={() => {
+                            if (this.props.toggleMenu) { this.props.toggleMenu(); }
+                        }}
                         to='/showcase'>
                         Showcase
                     </NavLink>
