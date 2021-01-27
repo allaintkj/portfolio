@@ -2,6 +2,11 @@
     align-items: center;
     display: flex;
 
+    &__ctas {
+        display: flex;
+        justify-content: center;
+    }
+
     &-text, &-img {
         display: inline-block;
         text-align: center;
@@ -16,9 +21,7 @@
 @media (min-width: $desktop) {
     .portfolio__landing {
         &__ctas {
-            .portfolio__button {
-                width: auto;
-            }
+            display: block;
         }
 
         &-text, &-img {
@@ -32,7 +35,7 @@
 
             img {
                 display: inline-block;
-                width: 80%;
+                width: 85%;
             }
         }
     }
@@ -42,7 +45,7 @@
     .portfolio__landing {
         &-img {
             img {
-                width: 50%;
+                width: 60%;
             }
         }
     }

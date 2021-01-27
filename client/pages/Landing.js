@@ -20,15 +20,17 @@ class Landing extends React.Component {
                         <p>Halifax, Nova Scotia</p>
                     </div>
 
-                    <NavLink className='portfolio__button'
-                        to='/contact'>
-                        Get in Touch
-                    </NavLink>
+                    <div className='portfolio__landing__ctas'>
+                        <NavLink className='portfolio__button'
+                            to='/contact'>
+                            Get in Touch
+                        </NavLink>
 
-                    <NavLink className='portfolio__button portfolio__button--reverse'
-                        to='/showcase'>
-                        See My Work
-                    </NavLink>
+                        <NavLink className='portfolio__button portfolio__button--reverse'
+                            to='/showcase'>
+                            See My Work
+                        </NavLink>
+                    </div>
                 </div>
 
                 <div className='portfolio__landing-img'>

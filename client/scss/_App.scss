@@ -4,7 +4,7 @@
 
     &__body {
         margin: 5% 0;
-        padding: 5vh 0;
+        padding: 10vh 0;
 
         &-text {
             margin-bottom: 2em
@@ -19,8 +19,8 @@
         margin: 0;
         margin-right: 5px;
         overflow: hidden;
-        padding: 0.75em 1em;
-        padding-right: 2em;
+        padding: 0.75em;
+        padding-right: 1.75em;
         position: relative;
         text-decoration: none;
         z-index: 1;
@@ -52,8 +52,8 @@
             border-right: 1px solid $orange;
             margin: 0;
             margin-left: 5px;
-            padding: 0.75em 1em;
-            padding-left: 2em;
+            padding: 0.75em;
+            padding-left: 1.75em;
 
             &::before {
                 background-color: $white;

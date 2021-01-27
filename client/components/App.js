@@ -8,6 +8,7 @@ import Footer from './Footer';
 
 // pages
 import Landing from '../pages/Landing';
+import Skills from '../pages/Skills';
 import Showcase from '../pages/Showcase';
 import Contact from '../pages/Contact';
 import ErrorPage from '../pages/ErrorPage';
@@ -25,7 +26,9 @@ class App extends React.Component {
         // close the menu if the window is resized
         // i.e. user switches from portait to landscape
         window.addEventListener('resize', () => {
-            this.setState({displayMenu: false});
+            if (this.state.displayMenu) {
+                this.setState({displayMenu: false});
+            }
         });
 
         return (
@@ -41,6 +44,7 @@ class App extends React.Component {
                         <Route exact path='/'><Redirect from='/' to='/home' /></Route>
 
                         <Route component={Landing} path='/home' />
+                        <Route component={Skills} path='/skills' />
                         <Route component={Showcase} path='/showcase' />
                         <Route component={Contact} path='/contact' />
 
