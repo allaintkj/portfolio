@@ -67,7 +67,7 @@ class Showcase extends React.Component {
                         </div>
 
                         <div className={`portfolio__showcase-col ${isFeatured ? 'txt-right' : (isEven ? 'txt-right' : '')}`}>
-                            <img src={builder.image(project.mainImage)} />
+                            <img alt={`${project.title} Project Image`} src={builder.image(project.mainImage)} />
                         </div>
                     </div>
 

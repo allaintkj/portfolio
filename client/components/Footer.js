@@ -20,21 +20,21 @@ class Footer extends React.Component {
                         href='https://github.com/allaintkj'
                         rel='noopener noreferrer'
                         target='_blank'>
-                        <img className='portfolio__social-icon' src={GitHub} />
+                        <img alt='GitHub Footer Image' className='portfolio__social-icon' src={GitHub} />
                     </a>
         
                     <a className='portfolio__social-link'
                         href='https://www.linkedin.com/in/allaintkj'
                         rel='noopener noreferrer'
                         target='_blank'>
-                        <img className='portfolio__social-icon' src={LinkedIn} />
+                        <img alt='LinkedIn Footer Image' className='portfolio__social-icon' src={LinkedIn} />
                     </a>
 
                     <a className='portfolio__social-link'
                         href='mailto:tom.allain@protonmail.com'
                         rel='noopener noreferrer'
                         target='_blank'>
-                        <img className='portfolio__social-icon' src={Email} />
+                        <img alt='Email Footer Image' className='portfolio__social-icon' src={Email} />
                     </a>
                 </div>
             </div>

@@ -19,12 +19,12 @@ class Header extends React.Component {
             <header className='portfolio__header'>
                 <div className='portfolio__header__logo'>
                     <NavLink to='/'>
-                        <img src={Logo} />
+                        <img alt='Logo Image' src={Logo} />
                     </NavLink>
                 </div>
 
                 <div className='portfolio__header__nav'>
-                    <img className='portfolio__header__burger'
+                    <img alt='Mobile Menu Toggle' className='portfolio__header__burger'
                         onClick={() => this.props.toggleMenu()}
                         src={btnBurger} />
 
