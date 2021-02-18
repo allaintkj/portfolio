@@ -34,7 +34,7 @@ class Landing extends React.Component {
                 </div>
 
                 <div className='portfolio__landing-img'>
-                    <img src={landingImg} />
+                    <img alt='Landing Page Illustration' src={landingImg} />
                 </div>
             </div>
         );
