@@ -7,20 +7,24 @@
   "author": "Tom <tom.allain@protonmail.com>",
   "license": "UNLICENSED",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "sanity start",
     "build": "sanity build"
   },
-  "keywords": [
-    "sanity"
-  ],
+  "resolutions": {
+    "immer": "8.0.1",
+    "mem": "4.0.0",
+    "yargs-parser": "18.1.2"
+  },
   "dependencies": {
-    "@sanity/base": "^2.1.2",
-    "@sanity/components": "^2.1.0",
-    "@sanity/core": "^2.1.2",
-    "@sanity/default-layout": "^2.1.2",
-    "@sanity/default-login": "^2.1.0",
-    "@sanity/desk-tool": "^2.1.2",
-    "@sanity/vision": "^2.1.0",
+    "@sanity/base": "^2.3.8",
+    "@sanity/cli": "^2.3.8",
+    "@sanity/components": "^2.2.6",
+    "@sanity/core": "^2.3.8",
+    "@sanity/default-layout": "^2.3.8",
+    "@sanity/default-login": "^2.2.6",
+    "@sanity/desk-tool": "^2.3.8",
+    "@sanity/vision": "^2.2.6",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0"

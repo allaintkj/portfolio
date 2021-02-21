@@ -78,16 +78,11 @@ class Showcase extends React.Component {
     }
 
     componentDidMount() {
-        // reset scroll position when transitioning between showcase and single project
-        window.scrollTo(0, 0);
-
         // fetch all sanity projects
-        sanityClient.fetch(`*[_type == 'project'] | order(featured desc, title) {
+        sanityClient.fetch(`*[_type == 'projects'] | order(featured desc, title) {
             _id,
-            title,
-            slug,
             mainImage,
-            excerpt,
+            title,
             description,
             projectType,
             featured,
