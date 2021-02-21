@@ -1,22 +1,8 @@
 export default {
-  name: 'project',
-  title: 'Project',
+  name: 'projects',
+  title: 'Projects',
   type: 'document',
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    },
     {
       name: 'mainImage',
       title: 'Main image',
@@ -26,10 +12,19 @@ export default {
       },
     },
     {
-      name: 'excerpt',
-      title: 'Excerpt',
+      name: 'title',
+      title: 'Title',
       type: 'string',
     },
+    // {
+    //   name: 'slug',
+    //   title: 'Slug',
+    //   type: 'slug',
+    //   options: {
+    //     source: 'title',
+    //     maxLength: 96,
+    //   },
+    // },
     {
       name: 'description',
       title: 'Description',
