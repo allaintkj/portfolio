@@ -9,7 +9,7 @@
         }
 
         &-wrapper {
-            padding: 5em 0;
+            padding: 10vh 0;
         }
     }
 
@@ -118,12 +118,6 @@
 
 @media (min-width: $fullhd) {
     .portfolio {
-        padding: 0 20%;
-
-        &__body {
-            &-wrapper {
-                padding: 10em 0;
-            }
-        }
+        padding: 0 15%;
     }
 }
