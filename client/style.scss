@@ -3,6 +3,7 @@ $black: #000000;
 $gray: #999999;
 $graydark: #333333;
 $orange: #D85800;
+$tan: #FFF2E6;
 $white: #ffffff;
 
 $phone: 576px;
@@ -43,7 +44,11 @@ body {
 
 h1, h2, h3 {
     font-family: 'OpenSans-Bold';
-    margin-bottom: 1.5em;
+    margin-bottom: 5rem;
+}
+
+html {
+    background-color: $tan;
 }
 
 img {

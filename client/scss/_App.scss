@@ -1,14 +1,21 @@
 .portfolio {
+    background-color: $white;
     overflow-x: hidden;
     padding: 0 $gutter;
 
     &__body {
-        margin: 5% 0;
-        padding: 10vh 0;
-
         &-text {
-            margin-bottom: 2em
+            margin-bottom: 5rem;
         }
+
+        &-wrapper {
+            padding: 5em 0;
+        }
+    }
+
+    &__row {
+        text-align: center;
+        width: 100%;
     }
 
     &__button, &__button--reverse {
@@ -84,6 +91,10 @@
 
 @media (min-width: $desktop) {
     .portfolio {
+        &__col {
+            text-align: left;
+        }
+
         &__nav-links {
             text-align: right;
 
@@ -107,6 +118,12 @@
 
 @media (min-width: $fullhd) {
     .portfolio {
-        padding: 0 15%;
+        padding: 0 20%;
+
+        &__body {
+            &-wrapper {
+                padding: 10em 0;
+            }
+        }
     }
 }

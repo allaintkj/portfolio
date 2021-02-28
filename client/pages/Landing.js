@@ -10,17 +10,17 @@ class Landing extends React.Component {
 
     render() {
         return (
-            <div className='portfolio__landing'>
-                <div className='portfolio__landing-text'>
-                    <h1>Let&apos;s Craft Something Elegant</h1>
+            <div className='portfolio__landing-wrapper'>
+                <div className='portfolio__landing-left'>
+                    <h1>{'Let\'s Craft Something Elegant'}</h1>
 
-                    <div className='portfolio__body-text'>
+                    <div className='portfolio__landing-intro'>
                         <p>Tom Allain</p>
                         <p>Web Developer and Electrician</p>
                         <p>Halifax, Nova Scotia</p>
                     </div>
 
-                    <div className='portfolio__landing__ctas'>
+                    <div className='portfolio__landing-ctas'>
                         <NavLink className='portfolio__button'
                             to='/contact'>
                             Get in Touch
@@ -33,7 +33,7 @@ class Landing extends React.Component {
                     </div>
                 </div>
 
-                <div className='portfolio__landing-img'>
+                <div className='portfolio__landing-right'>
                     <img alt='Landing Page Illustration' src={landingImg} />
                 </div>
             </div>

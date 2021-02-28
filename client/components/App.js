@@ -39,7 +39,7 @@ class App extends React.Component {
                 <MobileMenu display={this.state.displayMenu}
                     toggleMenu={() => this.setState({displayMenu: !this.state.displayMenu})} />
 
-                <div className='portfolio__body'>
+                <div className='portfolio__body-wrapper'>
                     <Switch>
                         <Route exact path='/'><Redirect from='/' to='/home' /></Route>
 

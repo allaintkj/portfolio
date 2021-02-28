@@ -5,10 +5,6 @@
         text-align: left;
     }
 
-    &-col {
-        text-align: center;
-    }
-
     &__list {
         padding-left: 1em;
     }
@@ -36,36 +32,28 @@
         text-align: right;
     }
 
-    &__row {
+    &__list-row {
         display: flex;
         justify-content: space-between;
         padding: 1em 0;
+        margin: auto;
+        max-width: 500px;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
     }
 }
 
 @media (min-width: $desktop) {
     .portfolio__skills {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        &__category {
-            padding-left: 1em;
-        }
-
-        &-col {
-            width: 49%;
-            text-align: left;
-        }
-
         &__list, &__list-item {
             display: inline-block;
             text-align: right;
-        }
-
-        &__row {
-            padding: 1em 0;
         }
     }
 }

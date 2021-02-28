@@ -1,18 +1,17 @@
 .portfolio__header {
-    background-color: transparent;
-    padding: 1.5em 0;
+    padding: 2em 0;
     position: relative;
 
-    &::after {
-        background-color: #FFF2E6;
+    &::before {
+        background-color: $orange;
         bottom: 0;
         content: '';
-        display: none;
+        display: block;
+        height: 1px;
         left: -50vw;
         position: absolute;
-        right: -50vw;
-        top: 0;
-        z-index: -1;
+        right: 0;
+        width: 200vw;
     }
 
     &__burger {
@@ -85,7 +84,7 @@
 
 @media (min-width: $wide) {
     .portfolio__header {
-        padding: 2em 0;
+        padding: 3em 0;
 
         &__logo {
             img {

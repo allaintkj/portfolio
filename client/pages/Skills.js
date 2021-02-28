@@ -22,7 +22,7 @@ class Skills extends React.Component {
 
         return this.state.skills.map((category, index) => {
             return (
-                <div className='portfolio__skills__row'
+                <div className='portfolio__skills__list-row'
                     key={`portfolio-skill-${category.skill_cat}-${index}`}>
                     <span className='portfolio__skills__category'>{category.skill_cat}</span>
 
@@ -65,7 +65,7 @@ class Skills extends React.Component {
     render() {
         return (
             <div className='portfolio__skills'>
-                <div className='portfolio__skills-col'>
+                <div className='portfolio__row'>
                     <h1>My Skills</h1>
 
                     <div className='portfolio__body-text'>
@@ -75,7 +75,7 @@ class Skills extends React.Component {
                     </div>
                 </div>
 
-                <div className='portfolio__skills-col'>
+                <div className='portfolio__row'>
                     {this.state.loading ? <p className='txt-center'>Fetching...</p> : null}
                     {this.state.loading ? null : this.buildSkillsList()}
                 </div>
