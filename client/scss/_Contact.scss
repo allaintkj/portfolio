@@ -1,31 +1,24 @@
 .portfolio__contact {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    &-col, &-col--left {
-        text-align: center;
-    }
-
     &-links {
-        a {
+        display: block;
+        margin: auto;
+        max-width: 280px;
+
+        li {
             display: block;
             margin: 1em;
-        }
-    }
-}
 
-@media (min-width: $desktop) {
-    .portfolio__contact {
-        flex-direction: row;
+            &:first-child {
+                margin-top: 0;
+            }
 
-        &-col--left {
-            text-align: left;
-        }
+            &:last-child {
+                margin-bottom: 0;
+            }
 
-        &-links {
-            text-align: center;
+            a {
+                display: block;
+            }
         }
     }
 }

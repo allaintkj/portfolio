@@ -41,7 +41,7 @@ class Showcase extends React.Component {
                                 {isFeatured ? <h1>{project.title}</h1> : <h2>{project.title}</h2>}
                             </div>
 
-                            <div className='portfolio__body-text'>
+                            <div className='portfolio__showcase__desc'>
                                 {project.description}
                             </div>
 
@@ -67,7 +67,9 @@ class Showcase extends React.Component {
                         </div>
 
                         <div className={`portfolio__showcase-col ${isFeatured ? 'txt-right' : (isEven ? 'txt-right' : '')}`}>
-                            <img alt={`${project.title} Project Image`} src={builder.image(project.mainImage)} />
+                            <div className='portfolio__showcase__img-wrapper'>
+                                <img alt={`${project.title} Project Image`} src={builder.image(project.mainImage)} />
+                            </div>
                         </div>
                     </div>
 
@@ -107,6 +109,10 @@ class Showcase extends React.Component {
     render() {
         return (
             <div className='portfolio__showcase'>
+                <div className='portfolio__row'>
+                    <h1 className='portfolio__showcase__page-title'>Showcase</h1>
+                </div>
+
                 {this.state.loading ? <p className='txt-center'>Fetching...</p> : null}
                 {this.state.loading ? null : this.buildProjectList()}
             </div>

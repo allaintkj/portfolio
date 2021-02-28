@@ -1,35 +1,45 @@
 .portfolio__landing {
-    align-items: center;
-    display: flex;
-
-    &__ctas {
+    &-ctas {
         display: flex;
         justify-content: center;
     }
 
-    &-text, &-img {
+    &-intro {
+        margin: 3em 0;
+    }
+
+    &-left, &-right {
         display: inline-block;
         text-align: center;
         width: 100%;
     }
 
-    &-img {
+    &-right {
         display: none;
+    }
+
+    &-wrapper {
+        align-items: center;
+        display: flex;
     }
 }
 
 @media (min-width: $desktop) {
     .portfolio__landing {
-        &__ctas {
-            display: block;
+        &-ctas {
+            justify-content: flex-start;
+
+            a {
+                display: block;
+            }
         }
 
-        &-text, &-img {
+        &-left, &-right {
             text-align: left;
             width: 50%;
         }
 
-        &-img {
+        &-right {
             display: inline-block;
             text-align: right;
 
@@ -43,7 +53,7 @@
 
 @media (min-width: $fullhd) {
     .portfolio__landing {
-        &-img {
+        &-right {
             img {
                 width: 60%;
             }

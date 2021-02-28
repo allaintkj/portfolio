@@ -8,7 +8,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div className='portfolio__contact'>
-                <div className='portfolio__contact-col--left'>
+                <div className='portfolio__row'>
                     <h1>Get in Touch</h1>
 
                     <div className='portfolio__body-text'>
@@ -17,7 +17,7 @@ class Contact extends React.Component {
                     </div>
                 </div>
 
-                <div className='portfolio__contact-col'>
+                <div className='portfolio__row'>
                     <ul className='portfolio__contact-links'>
                         <li>
                             <a className='portfolio__button'
