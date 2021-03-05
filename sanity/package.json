@@ -12,9 +12,10 @@
     "build": "sanity build"
   },
   "resolutions": {
-    "immer": "8.0.1",
-    "mem": "4.0.0",
-    "yargs-parser": "18.1.2"
+    "immer": "^8.0.1",
+    "mem": "^4.0.0",
+    "prismjs": "^1.23.0",
+    "yargs-parser": "^18.1.2"
   },
   "dependencies": {
     "@sanity/base": "^2.3.8",
