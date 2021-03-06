@@ -1,7 +1,5 @@
 import React from 'react';
 
-import landingImg from '../img/undraw.illustration.svg';
-
 class ErrorPage extends React.Component {
     constructor() {
         super();
@@ -28,10 +26,6 @@ class ErrorPage extends React.Component {
                         href='/showcase'>
                         See My Work
                     </a>
-                </div>
-
-                <div className='portfolio__landing-img'>
-                    <img src={landingImg} />
                 </div>
             </div>
         );

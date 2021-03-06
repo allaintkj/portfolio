@@ -12,7 +12,7 @@ class Landing extends React.Component {
         return (
             <div className='portfolio__landing-wrapper'>
                 <div className='portfolio__landing-left'>
-                    <h1>{'Let\'s Craft Something Elegant'}</h1>
+                    <h1>Elegant Web Experiences</h1>
 
                     <div className='portfolio__landing-intro'>
                         <p>Tom Allain</p>

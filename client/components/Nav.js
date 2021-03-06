@@ -27,8 +27,8 @@ class Nav extends React.Component {
                         onClick={() => {
                             if (this.props.toggleMenu) { this.props.toggleMenu(); }
                         }}
-                        to='/skills'>
-                        Skills
+                        to='/experience'>
+                        Experience
                     </NavLink>
                 </li>
 
