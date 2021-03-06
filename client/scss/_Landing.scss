@@ -45,17 +45,7 @@
 
             img {
                 display: inline-block;
-                width: 100%;
-            }
-        }
-    }
-}
-
-@media (min-width: $fullhd) {
-    .portfolio__landing {
-        &-right {
-            img {
-                width: 100%;
+                width: 95%;
             }
         }
     }

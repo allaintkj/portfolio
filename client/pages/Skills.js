@@ -66,7 +66,7 @@ class Skills extends React.Component {
         return (
             <div className='portfolio__skills'>
                 <div className='portfolio__row'>
-                    <h1>My Skills</h1>
+                    <h1>Experience</h1>
 
                     <div className='portfolio__body-text'>
                         <p>
